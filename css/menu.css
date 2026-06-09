@@ -1,0 +1,127 @@
+/* Menu Page Styles */
+.menu-hero {
+  background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat;
+}
+.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(22,22,22,0.85), rgba(182,95,61,0.4)); }
+.page-hero { height: 55vh; min-height: 400px; position: relative; display: flex; align-items: center; overflow: hidden; }
+.page-hero-content { position: relative; z-index: 1; animation: fadeUp 1s ease both 0.2s; }
+.page-hero-title { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4.5rem); font-weight: 900; color: var(--ivory); line-height: 1.1; margin: 0.75rem 0 1rem; }
+.page-hero-title em { color: var(--gold-lt); font-style: italic; }
+.page-hero-sub { color: rgba(248,244,233,0.75); font-size: 1.1rem; }
+
+.menu-section { background: var(--ivory); }
+.menu-intro { margin-bottom: 3rem; }
+
+/* Hide the radio inputs */
+#tab-starters, #tab-mains, #tab-grills, #tab-seafood, #tab-desserts, #tab-drinks { display: none; }
+
+/* Tab labels */
+.menu-tabs {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  background: var(--ivory-dk); border-radius: var(--radius-xl);
+  padding: 0.5rem; margin-bottom: 3rem;
+  justify-content: center;
+}
+.menu-tab-label {
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-xl);
+  font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+  color: var(--mid-gray);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.menu-tab-label:hover { color: var(--dark); background: rgba(255,255,255,0.6); }
+
+/* Active tab via checked radio */
+#tab-starters:checked ~ .menu-tabs label[for="tab-starters"],
+#tab-mains:checked    ~ .menu-tabs label[for="tab-mains"],
+#tab-grills:checked   ~ .menu-tabs label[for="tab-grills"],
+#tab-seafood:checked  ~ .menu-tabs label[for="tab-seafood"],
+#tab-desserts:checked ~ .menu-tabs label[for="tab-desserts"],
+#tab-drinks:checked   ~ .menu-tabs label[for="tab-drinks"] {
+  background: var(--forest); color: var(--gold);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Menu panels — all hidden by default */
+.menu-panel { display: none; animation: fadeUp 0.5s ease both; }
+
+#tab-starters:checked ~ .menu-panel#panel-starters,
+#tab-mains:checked    ~ .menu-panel#panel-mains,
+#tab-grills:checked   ~ .menu-panel#panel-grills,
+#tab-seafood:checked  ~ .menu-panel#panel-seafood,
+#tab-desserts:checked ~ .menu-panel#panel-desserts,
+#tab-drinks:checked   ~ .menu-panel#panel-drinks { display: block; }
+
+/* Menu grid */
+.menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+
+/* Menu item cards */
+.menu-item {
+  background: #fff; border-radius: var(--radius-md);
+  padding: 1.75rem; box-shadow: var(--shadow-sm);
+  border-left: 3px solid transparent;
+  transition: all var(--transition);
+}
+.menu-item:hover {
+  border-left-color: var(--gold);
+  box-shadow: var(--shadow-md);
+  transform: translateX(3px);
+}
+.menu-item--feature {
+  border-left-color: var(--gold);
+  background: linear-gradient(135deg, #fffdf5, #fff);
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.menu-item-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 1rem; margin-bottom: 0.6rem;
+}
+.menu-item h3 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--dark); }
+.menu-origin { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); display: block; margin-top: 0.2rem; }
+.menu-price { font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--forest); white-space: nowrap; }
+.menu-item > p { font-size: 0.9rem; color: var(--mid-gray); line-height: 1.65; margin-bottom: 0.75rem; }
+.menu-badge {
+  display: inline-block; background: var(--gold);
+  color: var(--dark); font-size: 0.65rem; font-weight: 700;
+  padding: 0.15rem 0.5rem; border-radius: 2rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-left: 0.5rem; vertical-align: middle;
+}
+.menu-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+.menu-tags span {
+  font-size: 0.72rem; font-weight: 500;
+  background: var(--ivory-dk); color: var(--mid-gray);
+  padding: 0.2rem 0.6rem; border-radius: 2rem;
+}
+
+/* Drinks layout */
+.drinks-columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.drinks-category {
+  font-family: var(--font-heading); font-size: 1.2rem;
+  font-weight: 700; color: var(--forest);
+  padding-bottom: 0.75rem; margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--gold);
+}
+.drinks-item { margin-bottom: 1rem; }
+.drinks-item .menu-item-header h3 { font-size: 0.97rem; }
+
+/* Allergen note */
+.allergen-note {
+  background: var(--forest); color: rgba(248,244,233,0.7);
+  padding: 1rem 0; font-size: 0.82rem; text-align: center;
+}
+
+@media (max-width: 900px) {
+  .menu-grid { grid-template-columns: 1fr; }
+  .menu-item--feature { grid-column: span 1; }
+  .drinks-columns { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .menu-tabs { gap: 0.25rem; padding: 0.35rem; }
+  .menu-tab-label { padding: 0.5rem 0.75rem; font-size: 0.75rem; }
+}

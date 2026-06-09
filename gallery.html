@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Savannah Flame</title>
+  <meta name="description" content="Visual feast — explore the ambiance, dishes, and moments from Savannah Flame." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
+<body>
+<input type="checkbox" id="nav-toggle" aria-hidden="true" />
+<nav class="nav-wrapper" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">🔥</div><div class="logo-text-wrap">Savannah Flame<small>Fine African Cuisine</small></div></a>
+    <label class="nav-hamburger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="reservations.html">Reservations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="reservations.html" class="nav-cta">Book a Table</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <section class="page-hero gallery-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <p class="section-label">A Visual Journey</p>
+      <h1 class="page-hero-title">Our <em>Gallery</em></h1>
+      <p class="page-hero-sub">Moments, plates, and spaces from the heart of Savannah Flame</p>
+    </div>
+  </section>
+
+  <section class="gallery-section section-pad">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:3rem;">
+        <p class="section-label">Visual Stories</p>
+        <h2 class="section-title">Life at <span>Savannah Flame</span></h2>
+        <p class="section-subtitle">Click any image to view full screen.</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <!-- CSS-only lightbox: each image is a link to its anchor, the overlay is a :target -->
+
+        <div class="gallery-item gallery-item--wide">
+          <a href="#lb-1" class="gallery-link" aria-label="View: Restaurant interior">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=80&auto=format&fit=crop" alt="Savannah Flame warm candlelit dining room" loading="lazy" />
+            <div class="gallery-overlay"><span>Dining Room</span></div>
+          </a>
+        </div>
+
+        <div class="gallery-item">
+          <a href="#lb-2" class="gallery-link" aria-label="View: Plated dish">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80&auto=format&fit=crop" alt="Elegantly plated fine dining dish" loading="lazy" />
+            <div class="gallery-overlay"><span>Signature Plate</span></div>
+          </a>
+        </div>
+
+        <div class="gallery-item">
+          <a href="#lb-3" class="gallery-link" aria-label="View: Food close-up">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80&auto=format&fit=crop" alt="African spiced dish close up" loading="lazy" />
+            <div class="gallery-overlay"><span>African Spices</span></div>
+          </a>
+        </div>
+
+        <div class="gallery-item">
+          <a href="#lb-4" class="gallery-link" aria-label="View: Chef at work">
+            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&q=80&auto=format&fit=crop" alt="Chef plating a dish in the kitchen" loading="lazy" />
+            <div class="gallery-overlay"><span>Kitchen Craft</span></div>
+          </a>
+        </div>
+
+        <div class="gallery-item gallery-item--tall">
+          <a href="#lb-5" class="gallery-link" aria-label="View: Bar area">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80&auto=format&fit=crop" alt="Savannah Flame restaurant interior evening" loading="lazy" />
+            <div class="gallery-overlay"><span>Evening Ambiance</span></div>
+          </a>
+        </div>
+
+        <div class="gallery-item">
+          <a href="#lb-6" class="gallery-link" aria-label="View: Dessert plating">
+            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80&auto=format&fit=crop" alt="Dessert plating at Savannah Flame" loading="lazy" />
+            <div class="gallery-overlay"><span>Sweet Endings</span></div>
+          </a>
+        </div>
+
+        <div class="gallery-item">
+          <a href="#lb-7" class="gallery-link" aria-label="View: Table setting">
+            <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&q=80&auto=format&fit=crop" alt="Elegant table setting with African décor" loading="lazy" />
+            <div class="gallery-overlay"><span>Table Setting</span></div>
+          </a>
+        </div>
+
+        <div class="gallery-item gallery-item--wide">
+          <a href="#lb-8" class="gallery-link" aria-label="View: Group dining">
+            <img src="https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=900&q=80&auto=format&fit=crop" alt="Group dining experience at Savannah Flame" loading="lazy" />
+            <div class="gallery-overlay"><span>Private Dining</span></div>
+          </a>
+        </div>
+
+        <div class="gallery-item">
+          <a href="#lb-9" class="gallery-link" aria-label="View: Cocktails">
+            <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=600&q=80&auto=format&fit=crop" alt="African-inspired cocktails" loading="lazy" />
+            <div class="gallery-overlay"><span>Cocktails</span></div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CSS-only Lightboxes -->
+  <div id="lb-1" class="lightbox" role="dialog" aria-modal="true" aria-label="Dining Room">
+    <a href="#" class="lb-close" aria-label="Close lightbox">✕</a>
+    <div class="lb-content">
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=90&auto=format&fit=crop" alt="Savannah Flame warm candlelit dining room" />
+      <p class="lb-caption">Dining Room — Grünerløkka, Oslo</p>
+    </div>
+  </div>
+  <div id="lb-2" class="lightbox" role="dialog" aria-modal="true" aria-label="Signature Plate">
+    <a href="#" class="lb-close" aria-label="Close">✕</a>
+    <div class="lb-content"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=90&auto=format&fit=crop" alt="Signature dish" /><p class="lb-caption">Signature Plate — Artistry on Every Table</p></div>
+  </div>
+  <div id="lb-3" class="lightbox" role="dialog" aria-modal="true" aria-label="African Spices">
+    <a href="#" class="lb-close" aria-label="Close">✕</a>
+    <div class="lb-content"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=90&auto=format&fit=crop" alt="Spiced dish" /><p class="lb-caption">African Spices — A World of Flavour</p></div>
+  </div>
+  <div id="lb-4" class="lightbox" role="dialog" aria-modal="true" aria-label="Kitchen Craft">
+    <a href="#" class="lb-close" aria-label="Close">✕</a>
+    <div class="lb-content"><img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=1200&q=90&auto=format&fit=crop" alt="Chef at work" /><p class="lb-caption">Kitchen Craft — Precision Meets Passion</p></div>
+  </div>
+  <div id="lb-5" class="lightbox" role="dialog" aria-modal="true" aria-label="Evening Ambiance">
+    <a href="#" class="lb-close" aria-label="Close">✕</a>
+    <div class="lb-content"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=90&auto=format&fit=crop" alt="Restaurant evening" /><p class="lb-caption">Evening Ambiance — Where Nights Come Alive</p></div>
+  </div>
+  <div id="lb-6" class="lightbox" role="dialog" aria-modal="true" aria-label="Sweet Endings">
+    <a href="#" class="lb-close" aria-label="Close">✕</a>
+    <div class="lb-content"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=1200&q=90&auto=format&fit=crop" alt="Dessert" /><p class="lb-caption">Sweet Endings — Desserts to Remember</p></div>
+  </div>
+  <div id="lb-7" class="lightbox" role="dialog" aria-modal="true" aria-label="Table Setting">
+    <a href="#" class="lb-close" aria-label="Close">✕</a>
+    <div class="lb-content"><img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=1200&q=90&auto=format&fit=crop" alt="Table setting" /><p class="lb-caption">Table Setting — Every Detail Considered</p></div>
+  </div>
+  <div id="lb-8" class="lightbox" role="dialog" aria-modal="true" aria-label="Private Dining">
+    <a href="#" class="lb-close" aria-label="Close">✕</a>
+    <div class="lb-content"><img src="https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=1200&q=90&auto=format&fit=crop" alt="Group dining" /><p class="lb-caption">Private Dining — The Kalahari Room</p></div>
+  </div>
+  <div id="lb-9" class="lightbox" role="dialog" aria-modal="true" aria-label="Cocktails">
+    <a href="#" class="lb-close" aria-label="Close">✕</a>
+    <div class="lb-content"><img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=1200&q=90&auto=format&fit=crop" alt="Cocktails" /><p class="lb-caption">Cocktails — African-Inspired Mixology</p></div>
+  </div>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo-name">🔥 Savannah Flame<small>Fine African Cuisine</small></div><p>Authentic African flavors reimagined for the world.</p><nav class="footer-social" aria-label="Social media"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">in</a><a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="TripAdvisor">✈</a></nav></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="menu.html">Our Menu</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="reservations.html">Reservations</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Opening Hours</h4><div class="footer-info"><p><strong>Mon – Thu</strong></p><p>12:00 – 22:00</p><p><strong>Fri – Sat</strong></p><p>12:00 – 23:30</p><p><strong>Sunday</strong></p><p>13:00 – 21:00</p></div></div>
+      <div class="footer-col"><h4>Contact Us</h4><div class="footer-info"><p><span class="fi-icon">📍</span>Grünerløkka 14, Oslo</p><p><span class="fi-icon">📞</span>+47 22 45 78 90</p><p><span class="fi-icon">✉</span>hello@savannahflame.no</p></div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 Savannah Flame. All rights reserved.</p><p class="craft">Designed and Developed Using Only HTML &amp; CSS</p></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -4,1484 +4,432 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Savannah Flame — Authentic African Flavors Reimagined for the World</title>
-  <meta name="description" content="Experience the rich culinary heritage of Africa at Savannah Flame. Authentic flavors reimagined for the modern palate." />
+  <meta name="description" content="Premium African fusion restaurant in Oslo. Authentic flavors, modern artistry." />
   <link rel="stylesheet" href="css/main.css" />
-  <style>
-    /* ── HOME-SPECIFIC STYLES ── */
-
-    /* ==============================
-       HERO SLIDESHOW
-       ============================== */
-    .hero {
-      position: relative;
-      height: 100vh;
-      min-height: 600px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: var(--nav-height);
-    }
-
-    /* Three slides stacked, crossfading */
-    .hero__slide {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      animation: slide-fade-in 18s infinite;
-    }
-
-    .hero__slide:nth-child(1) {
-      background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80');
-      animation-delay: 0s;
-      animation-name: slide-ken-1;
-    }
-    .hero__slide:nth-child(2) {
-      background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80');
-      animation-delay: 6s;
-      animation-name: slide-ken-2;
-    }
-    .hero__slide:nth-child(3) {
-      background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80');
-      animation-delay: 12s;
-      animation-name: slide-ken-3;
-    }
-
-    @keyframes slide-ken-1 {
-      0%   { opacity: 0; transform: scale(1)    translateX(0); }
-      5%   { opacity: 1; }
-      30%  { opacity: 1; transform: scale(1.1)  translateX(-2%); }
-      36%  { opacity: 0; }
-      100% { opacity: 0; }
-    }
-    @keyframes slide-ken-2 {
-      0%   { opacity: 0; }
-      33%  { opacity: 0; transform: scale(1.05) translateX(1%); }
-      38%  { opacity: 1; }
-      63%  { opacity: 1; transform: scale(1.12) translateX(-1%); }
-      69%  { opacity: 0; }
-      100% { opacity: 0; }
-    }
-    @keyframes slide-ken-3 {
-      0%   { opacity: 0; }
-      66%  { opacity: 0; transform: scale(1)    translateX(-1%); }
-      71%  { opacity: 1; }
-      96%  { opacity: 1; transform: scale(1.08) translateX(1%); }
-      100% { opacity: 0; }
-    }
-
-    /* Gradient overlay: dark top-bottom + forest tint */
-    .hero__overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg,
-          rgba(28,28,28,0.45) 0%,
-          rgba(31,77,58,0.25) 40%,
-          rgba(28,28,28,0.7) 100%
-        );
-      z-index: 1;
-    }
-
-    /* Decorative diagonal pattern */
-    .hero__pattern {
-      position: absolute;
-      inset: 0;
-      background-image:
-        repeating-linear-gradient(
-          -45deg,
-          transparent,
-          transparent 40px,
-          rgba(212,175,55,0.03) 40px,
-          rgba(212,175,55,0.03) 41px
-        );
-      z-index: 2;
-    }
-
-    .hero__content {
-      position: relative;
-      z-index: 3;
-      text-align: center;
-      color: var(--color-white);
-      max-width: 820px;
-      padding: 0 var(--space-lg);
-      animation: fade-up 1.1s ease 0.3s both;
-    }
-
-    .hero__eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-sm);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--color-gold);
-      margin-bottom: var(--space-md);
-    }
-
-    .hero__eyebrow::before,
-    .hero__eyebrow::after {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--color-gold);
-      opacity: 0.7;
-    }
-
-    .hero__title {
-      font-family: var(--font-heading);
-      font-size: clamp(2.8rem, 6vw, 5.5rem);
-      font-weight: 800;
-      line-height: 1.08;
-      color: var(--color-white);
-      margin-bottom: var(--space-md);
-      text-shadow: 0 4px 24px rgba(0,0,0,0.4);
-    }
-
-    .hero__title em {
-      font-style: italic;
-      color: var(--color-gold);
-    }
-
-    .hero__sub {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: rgba(255,255,255,0.82);
-      max-width: 540px;
-      margin: 0 auto var(--space-xl);
-      line-height: 1.75;
-    }
-
-    .hero__actions {
-      display: flex;
-      gap: var(--space-md);
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* Scroll arrow */
-    .hero__scroll {
-      position: absolute;
-      bottom: var(--space-lg);
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 3;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: rgba(255,255,255,0.5);
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .hero__scroll-line {
-      width: 1px;
-      height: 48px;
-      background: linear-gradient(to bottom, transparent, rgba(212,175,55,0.8));
-      animation: bounce-y 2s ease-in-out infinite;
-    }
-
-    /* Slide dots */
-    .hero__dots {
-      position: absolute;
-      bottom: var(--space-lg);
-      right: var(--space-xl);
-      z-index: 3;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .hero__dot {
-      width: 2px;
-      height: 24px;
-      background: rgba(255,255,255,0.3);
-      border-radius: 2px;
-      transition: background var(--transition-base);
-    }
-
-    /* ==============================
-       STATS SECTION
-       ============================== */
-    .stats {
-      background: var(--color-forest);
-      padding: var(--space-2xl) 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stats::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle at 20% 50%, rgba(212,175,55,0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(182,95,61,0.06) 0%, transparent 50%);
-    }
-
-    .stats__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-lg);
-      position: relative;
-    }
-
-    .stats__item {
-      text-align: center;
-      padding: var(--space-lg);
-      position: relative;
-    }
-
-    .stats__item:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 20%;
-      height: 60%;
-      width: 1px;
-      background: rgba(212,175,55,0.25);
-    }
-
-    .stats__number {
-      font-family: var(--font-heading);
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      font-weight: 800;
-      color: var(--color-gold);
-      line-height: 1;
-      margin-bottom: 0.25rem;
-      animation: count-pulse 3s ease-in-out infinite;
-    }
-
-    .stats__item:nth-child(2) .stats__number { animation-delay: 0.5s; }
-    .stats__item:nth-child(3) .stats__number { animation-delay: 1s; }
-
-    .stats__label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(248,244,233,0.7);
-    }
-
-    .stats__desc {
-      font-size: 0.8rem;
-      color: rgba(248,244,233,0.4);
-      margin-top: 4px;
-    }
-
-    /* ==============================
-       FEATURED DISHES
-       ============================== */
-    .dishes {
-      background: var(--color-ivory);
-      padding: var(--space-3xl) 0;
-    }
-
-    .dishes__header {
-      text-align: center;
-      margin-bottom: var(--space-2xl);
-    }
-
-    .dishes__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-lg);
-    }
-
-    .dish-card {
-      background: var(--color-white);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: transform var(--transition-base), box-shadow var(--transition-base);
-    }
-
-    .dish-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    /* Gradient placeholder for food cards */
-    .dish-card__img {
-      height: 220px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .dish-card__img-bg {
-      width: 100%;
-      height: 100%;
-      transition: transform var(--transition-slow);
-    }
-
-    .dish-card:hover .dish-card__img-bg {
-      transform: scale(1.07);
-    }
-
-    /* Gradient palettes representing African cuisine vibes */
-    .dish-card__img-bg--1 {
-      background: linear-gradient(135deg, #5c2a0a 0%, #b65f3d 40%, #d4813a 70%, #e8a84a 100%);
-    }
-    .dish-card__img-bg--2 {
-      background: linear-gradient(135deg, #1f4d3a 0%, #2e7a55 50%, #4caf70 100%);
-    }
-    .dish-card__img-bg--3 {
-      background: linear-gradient(135deg, #3a1a3a 0%, #7a3a6a 50%, #c46a8a 100%);
-    }
-    .dish-card__img-bg--4 {
-      background: linear-gradient(135deg, #4a3a10 0%, #8a6a20 50%, #d4af37 100%);
-    }
-    .dish-card__img-bg--5 {
-      background: linear-gradient(135deg, #1a3a4a 0%, #2a6a8a 50%, #4a9ab5 100%);
-    }
-    .dish-card__img-bg--6 {
-      background: linear-gradient(135deg, #3a0a0a 0%, #8a1a1a 50%, #c43a2a 100%);
-    }
-
-    /* Decorative pattern overlay on dish card */
-    .dish-card__img-pattern {
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle at 30% 40%, rgba(255,255,255,0.12) 0%, transparent 40%),
-        radial-gradient(circle at 70% 70%, rgba(0,0,0,0.15) 0%, transparent 40%);
-    }
-
-    /* Dish type badge */
-    .dish-card__badge {
-      position: absolute;
-      top: var(--space-sm);
-      left: var(--space-sm);
-      padding: 4px 10px;
-      background: var(--color-gold);
-      color: var(--color-dark);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-radius: var(--radius-pill);
-    }
-
-    .dish-card__body {
-      padding: var(--space-md);
-    }
-
-    .dish-card__category {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--color-terra);
-      margin-bottom: 0.3rem;
-    }
-
-    .dish-card__name {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--color-dark);
-      margin-bottom: 0.4rem;
-    }
-
-    .dish-card__desc {
-      font-size: 0.85rem;
-      color: var(--color-muted);
-      line-height: 1.6;
-      margin-bottom: var(--space-sm);
-    }
-
-    .dish-card__footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .dish-card__price {
-      font-family: var(--font-heading);
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--color-forest);
-    }
-
-    .dish-card__order {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--color-forest);
-      color: var(--color-gold);
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background var(--transition-fast), transform var(--transition-fast);
-    }
-
-    .dish-card__order:hover {
-      background: var(--color-gold);
-      color: var(--color-dark);
-      transform: scale(1.1);
-    }
-
-    .dishes__cta {
-      text-align: center;
-      margin-top: var(--space-2xl);
-    }
-
-    /* ==============================
-       STORY PREVIEW
-       ============================== */
-    .story {
-      background: var(--color-white);
-      padding: var(--space-3xl) 0;
-      overflow: hidden;
-    }
-
-    .story__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-2xl);
-      align-items: center;
-    }
-
-    .story__images {
-      position: relative;
-      height: 520px;
-    }
-
-    .story__img-main {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 70%;
-      height: 78%;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .story__img-accent {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 52%;
-      height: 52%;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      border: 5px solid var(--color-ivory);
-    }
-
-    .story__img-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform var(--transition-slow);
-    }
-
-    .story__img-main:hover .story__img-photo,
-    .story__img-accent:hover .story__img-photo {
-      transform: scale(1.05);
-    }
-
-    /* Gold badge floating */
-    .story__badge {
-      position: absolute;
-      bottom: 30%;
-      left: 58%;
-      width: 110px;
-      height: 110px;
-      background: var(--color-gold);
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      box-shadow: var(--shadow-gold);
-      z-index: 2;
-      animation: slow-spin 20s linear infinite;
-    }
-
-    .story__badge-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: slow-spin 20s linear infinite reverse;
-    }
-
-    .story__badge-num {
-      font-family: var(--font-heading);
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--color-dark);
-      line-height: 1;
-    }
-
-    .story__badge-text {
-      font-size: 0.55rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-dark);
-      text-align: center;
-      max-width: 60px;
-    }
-
-    .story__content {
-      max-width: 520px;
-    }
-
-    .story__quote {
-      font-family: var(--font-heading);
-      font-size: 1.2rem;
-      font-style: italic;
-      color: var(--color-forest);
-      border-left: 3px solid var(--color-gold);
-      padding-left: var(--space-md);
-      margin-bottom: var(--space-lg);
-      line-height: 1.6;
-    }
-
-    .story__text {
-      font-size: 0.95rem;
-      color: var(--color-mid);
-      line-height: 1.9;
-      margin-bottom: var(--space-md);
-    }
-
-    /* ==============================
-       WHY CHOOSE US
-       ============================== */
-    .why {
-      background: var(--color-forest);
-      padding: var(--space-3xl) 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .why::before {
-      content: '';
-      position: absolute;
-      top: -60px;
-      right: -60px;
-      width: 320px;
-      height: 320px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(212,175,55,0.1), transparent 70%);
-    }
-
-    .why::after {
-      content: '';
-      position: absolute;
-      bottom: -80px;
-      left: -40px;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(182,95,61,0.12), transparent 70%);
-    }
-
-    .why__header {
-      text-align: center;
-      margin-bottom: var(--space-2xl);
-    }
-
-    .why__header .section-title {
-      color: var(--color-ivory);
-    }
-
-    .why__header .section-subtitle {
-      color: rgba(248,244,233,0.65);
-      margin: 0 auto;
-    }
-
-    .why__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--space-lg);
-      position: relative;
-      z-index: 1;
-    }
-
-    .why-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(212,175,55,0.15);
-      border-radius: var(--radius-lg);
-      padding: var(--space-lg);
-      text-align: center;
-      transition: background var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
-    }
-
-    .why-card:hover {
-      background: rgba(212,175,55,0.1);
-      border-color: rgba(212,175,55,0.4);
-      transform: translateY(-6px);
-    }
-
-    .why-card__icon {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: rgba(212,175,55,0.15);
-      border: 1px solid rgba(212,175,55,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto var(--space-md);
-      font-size: 1.5rem;
-      transition: background var(--transition-base);
-    }
-
-    .why-card:hover .why-card__icon {
-      background: var(--color-gold);
-    }
-
-    .why-card__title {
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--color-ivory);
-      margin-bottom: 0.5rem;
-    }
-
-    .why-card__text {
-      font-size: 0.85rem;
-      color: rgba(248,244,233,0.6);
-      line-height: 1.7;
-    }
-
-    /* ==============================
-       TESTIMONIALS
-       ============================== */
-    .testimonials {
-      background: var(--color-ivory);
-      padding: var(--space-3xl) 0;
-    }
-
-    .testimonials__header {
-      text-align: center;
-      margin-bottom: var(--space-2xl);
-    }
-
-    .testimonials__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-lg);
-    }
-
-    .testimonial-card {
-      background: var(--color-white);
-      border-radius: var(--radius-lg);
-      padding: var(--space-lg);
-      box-shadow: var(--shadow-sm);
-      position: relative;
-      transition: transform var(--transition-base), box-shadow var(--transition-base);
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .testimonial-card::before {
-      content: '\201C';
-      position: absolute;
-      top: -10px;
-      left: var(--space-md);
-      font-family: var(--font-heading);
-      font-size: 5rem;
-      color: var(--color-gold);
-      opacity: 0.25;
-      line-height: 1;
-    }
-
-    .testimonial-card__stars {
-      display: flex;
-      gap: 3px;
-      margin-bottom: var(--space-sm);
-    }
-
-    .star {
-      color: var(--color-gold);
-      font-size: 0.9rem;
-    }
-
-    .testimonial-card__text {
-      font-size: 0.9rem;
-      color: var(--color-mid);
-      line-height: 1.8;
-      font-style: italic;
-      margin-bottom: var(--space-md);
-    }
-
-    .testimonial-card__author {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-    }
-
-    .testimonial-card__avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-heading);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--color-white);
-      flex-shrink: 0;
-    }
-
-    .avatar--forest { background: var(--color-forest); }
-    .avatar--terra  { background: var(--color-terra); }
-    .avatar--gold   { background: var(--color-gold-dk); }
-
-    .testimonial-card__name {
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--color-dark);
-    }
-
-    .testimonial-card__location {
-      font-size: 0.75rem;
-      color: var(--color-muted);
-    }
-
-    /* ==============================
-       CALL TO ACTION
-       ============================== */
-    .cta-section {
-      position: relative;
-      padding: var(--space-3xl) 0;
-      overflow: hidden;
-      background: var(--color-dark);
-    }
-
-    .cta-section__bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.25;
-      animation: kenburns-2 15s ease-in-out infinite alternate;
-    }
-
-    .cta-section__overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg,
-        rgba(31,77,58,0.85) 0%,
-        rgba(28,28,28,0.75) 100%
-      );
-    }
-
-    .cta-section__content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .cta-section__title {
-      font-family: var(--font-heading);
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      font-weight: 800;
-      color: var(--color-white);
-      margin-bottom: var(--space-md);
-    }
-
-    .cta-section__title em {
-      color: var(--color-gold);
-      font-style: italic;
-    }
-
-    .cta-section__text {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: var(--space-xl);
-      line-height: 1.8;
-    }
-
-    .cta-section__actions {
-      display: flex;
-      gap: var(--space-md);
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* Decorative african-pattern border element */
-    .cta-section__decor {
-      position: absolute;
-      left: 5%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 60px;
-      height: 60px;
-      border: 2px solid rgba(212,175,55,0.3);
-      border-radius: 50%;
-      opacity: 0.5;
-    }
-
-    .cta-section__decor::before {
-      content: '';
-      position: absolute;
-      inset: 8px;
-      border: 1px solid rgba(212,175,55,0.4);
-      border-radius: 50%;
-    }
-
-    .cta-section__decor2 {
-      position: absolute;
-      right: 5%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 80px;
-      height: 80px;
-      border: 2px solid rgba(182,95,61,0.3);
-      border-radius: 50%;
-      opacity: 0.5;
-    }
-
-    /* ==============================
-       RESPONSIVE
-       ============================== */
-    @media (max-width: 1024px) {
-      .dishes__grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .why__grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .testimonials__grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .hero__title {
-        font-size: 2.4rem;
-      }
-
-      .stats__grid {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-
-      .stats__item:not(:last-child)::after {
-        right: auto;
-        left: 20%;
-        top: auto;
-        bottom: 0;
-        width: 60%;
-        height: 1px;
-      }
-
-      .dishes__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .story__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .story__images {
-        height: 360px;
-      }
-
-      .story__badge {
-        width: 90px;
-        height: 90px;
-      }
-
-      .why__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .testimonials__grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero__actions {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .hero__dots {
-        display: none;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/home.css" />
 </head>
 <body>
 
-  <!-- ══════════════════════════════════════
-       MOBILE NAV TOGGLE (hidden checkbox)
-  ══════════════════════════════════════ -->
-  <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+<input type="checkbox" id="nav-toggle" aria-hidden="true" />
 
-  <!-- ══════════════════════════════════════
-       NAVIGATION
-  ══════════════════════════════════════ -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-
-      <a href="index.html" class="nav__logo" aria-label="Savannah Flame Home">
-        <span class="nav__logo-name">Savannah <span>Flame</span></span>
-        <span class="nav__logo-tagline">African Fusion Dining</span>
-      </a>
-
-      <ul class="nav__links" role="list">
-        <li><a href="index.html"              class="nav__link active">Home</a></li>
-        <li><a href="pages/about.html"        class="nav__link">About</a></li>
-        <li><a href="pages/menu.html"         class="nav__link">Menu</a></li>
-        <li><a href="pages/gallery.html"      class="nav__link">Gallery</a></li>
-        <li><a href="pages/reservations.html" class="nav__link">Reservations</a></li>
-        <li><a href="pages/contact.html"      class="nav__link">Contact</a></li>
-        <li>
-          <a href="pages/reservations.html" class="btn btn--primary nav__cta">Book a Table</a>
-        </li>
-      </ul>
-
-      <!-- Hamburger label (activates #nav-toggle checkbox) -->
-      <label class="nav__hamburger" for="nav-toggle" aria-label="Toggle mobile menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-
-    </div>
-  </nav>
-
-  <!-- ══════════════════════════════════════
-       HERO SECTION
-  ══════════════════════════════════════ -->
-  <section class="hero" aria-label="Hero">
-
-    <!-- Slideshow slides -->
-    <div class="hero__slide" aria-hidden="true"></div>
-    <div class="hero__slide" aria-hidden="true"></div>
-    <div class="hero__slide" aria-hidden="true"></div>
-
-    <!-- Overlays -->
-    <div class="hero__overlay" aria-hidden="true"></div>
-    <div class="hero__pattern" aria-hidden="true"></div>
-
-    <!-- Hero content -->
-    <div class="hero__content">
-      <p class="hero__eyebrow">Est. 2009 &bull; Nairobi &bull; Award-Winning</p>
-
-      <h1 class="hero__title">
-        Authentic <em>African</em> Flavors<br>
-        Reimagined for the World
-      </h1>
-
-      <p class="hero__sub">
-        Where ancient culinary traditions meet modern artistry.
-        Every plate tells the story of a continent bursting with flavor,
-        culture, and passion.
-      </p>
-
-      <div class="hero__actions">
-        <a href="pages/menu.html" class="btn btn--primary">Explore Our Menu</a>
-        <a href="pages/reservations.html" class="btn btn--outline-light">Book a Table</a>
+<!-- NAVIGATION -->
+<nav class="nav-wrapper" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Savannah Flame home">
+      <div class="logo-icon">🔥</div>
+      <div class="logo-text-wrap">
+        Savannah Flame
+        <small>Fine African Cuisine</small>
       </div>
+    </a>
+    <label class="nav-hamburger" for="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </label>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reservations.html">Reservations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="reservations.html" class="nav-cta">Book a Table</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero banner">
+    <div class="hero-slides" aria-hidden="true">
+      <div class="slide slide-1"></div>
+      <div class="slide slide-2"></div>
+      <div class="slide slide-3"></div>
     </div>
-
-    <!-- Slide position indicators -->
-    <div class="hero__dots" aria-hidden="true">
-      <div class="hero__dot"></div>
-      <div class="hero__dot"></div>
-      <div class="hero__dot"></div>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="hero__scroll" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
-    </div>
-
-  </section>
-
-  <!-- ══════════════════════════════════════
-       STATISTICS
-  ══════════════════════════════════════ -->
-  <section class="stats" aria-label="Restaurant highlights">
-    <div class="container">
-      <div class="stats__grid">
-
-        <div class="stats__item">
-          <div class="stats__number">15+</div>
-          <div class="stats__label">Years of Excellence</div>
-          <div class="stats__desc">Crafting unforgettable experiences since 2009</div>
-        </div>
-
-        <div class="stats__item">
-          <div class="stats__number">20K+</div>
-          <div class="stats__label">Happy Guests</div>
-          <div class="stats__desc">Smiles across every table, every evening</div>
-        </div>
-
-        <div class="stats__item">
-          <div class="stats__number">50+</div>
-          <div class="stats__label">Signature Dishes</div>
-          <div class="stats__desc">Each recipe a journey through African terroir</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       FEATURED DISHES
-  ══════════════════════════════════════ -->
-  <section class="dishes section" aria-labelledby="dishes-title">
-    <div class="container">
-
-      <div class="dishes__header">
-        <span class="section-eyebrow">Signature Creations</span>
-        <h2 class="section-title" id="dishes-title">Dishes That Define Us</h2>
-        <div class="gold-bar"></div>
-        <p class="section-subtitle" style="margin: 0 auto;">
-          Handcrafted by our head chef using the finest locally-sourced ingredients
-          and time-honoured spice routes of the continent.
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <div class="hero-text">
+        <p class="hero-label">Est. 2009 · Oslo, Norway</p>
+        <h1 class="hero-title">
+          Authentic African<br/>
+          <em>Flavors Reimagined</em><br/>
+          for the World
+        </h1>
+        <p class="hero-sub">
+          Where the rich heritage of African cuisine meets modern culinary artistry.
+          Every dish tells a story of culture, spice, and soulful tradition.
         </p>
+        <div class="hero-actions">
+          <a href="menu.html" class="btn btn-gold">Explore Menu</a>
+          <a href="reservations.html" class="btn btn-outline">Book a Table</a>
+        </div>
       </div>
-
-      <div class="dishes__grid">
-
-        <!-- Dish 1 -->
-        <article class="dish-card">
-          <div class="dish-card__img">
-            <div class="dish-card__img-bg dish-card__img-bg--1"></div>
-            <div class="dish-card__img-pattern"></div>
-            <span class="dish-card__badge">Chef's Pick</span>
-          </div>
-          <div class="dish-card__body">
-            <p class="dish-card__category">Main Course</p>
-            <h3 class="dish-card__name">Nyama Choma Royale</h3>
-            <p class="dish-card__desc">Slow-roasted prime rib seasoned with East African spice blends, served with ugali crisps and a red wine jus.</p>
-            <div class="dish-card__footer">
-              <span class="dish-card__price">KSh 3,200</span>
-              <a href="pages/menu.html" class="dish-card__order" aria-label="View on menu">+</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Dish 2 -->
-        <article class="dish-card">
-          <div class="dish-card__img">
-            <div class="dish-card__img-bg dish-card__img-bg--2"></div>
-            <div class="dish-card__img-pattern"></div>
-          </div>
-          <div class="dish-card__body">
-            <p class="dish-card__category">Starter</p>
-            <h3 class="dish-card__name">Suya Skewer Trio</h3>
-            <p class="dish-card__desc">West African-spiced beef skewers with groundnut glaze, pickled cucumber ribbons and harissa aioli.</p>
-            <div class="dish-card__footer">
-              <span class="dish-card__price">KSh 1,400</span>
-              <a href="pages/menu.html" class="dish-card__order" aria-label="View on menu">+</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Dish 3 -->
-        <article class="dish-card">
-          <div class="dish-card__img">
-            <div class="dish-card__img-bg dish-card__img-bg--5"></div>
-            <div class="dish-card__img-pattern"></div>
-            <span class="dish-card__badge">Seasonal</span>
-          </div>
-          <div class="dish-card__body">
-            <p class="dish-card__category">Seafood</p>
-            <h3 class="dish-card__name">Swahili Coast Prawns</h3>
-            <p class="dish-card__desc">Tiger prawns in a coconut-tamarind broth with lemongrass, served with turmeric pilau and lime.</p>
-            <div class="dish-card__footer">
-              <span class="dish-card__price">KSh 2,800</span>
-              <a href="pages/menu.html" class="dish-card__order" aria-label="View on menu">+</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Dish 4 -->
-        <article class="dish-card">
-          <div class="dish-card__img">
-            <div class="dish-card__img-bg dish-card__img-bg--4"></div>
-            <div class="dish-card__img-pattern"></div>
-          </div>
-          <div class="dish-card__body">
-            <p class="dish-card__category">Grill</p>
-            <h3 class="dish-card__name">Savannah Flame Grill</h3>
-            <p class="dish-card__desc">Mixed grill platter: lamb chops, chicken thighs and merguez sausage over mesquite with chimichurri verde.</p>
-            <div class="dish-card__footer">
-              <span class="dish-card__price">KSh 4,500</span>
-              <a href="pages/menu.html" class="dish-card__order" aria-label="View on menu">+</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Dish 5 -->
-        <article class="dish-card">
-          <div class="dish-card__img">
-            <div class="dish-card__img-bg dish-card__img-bg--3"></div>
-            <div class="dish-card__img-pattern"></div>
-          </div>
-          <div class="dish-card__body">
-            <p class="dish-card__category">Dessert</p>
-            <h3 class="dish-card__name">Baobab Panna Cotta</h3>
-            <p class="dish-card__desc">Silky baobab-infused panna cotta with a hibiscus coulis, candied tamarind and toasted sesame praline.</p>
-            <div class="dish-card__footer">
-              <span class="dish-card__price">KSh 950</span>
-              <a href="pages/menu.html" class="dish-card__order" aria-label="View on menu">+</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Dish 6 -->
-        <article class="dish-card">
-          <div class="dish-card__img">
-            <div class="dish-card__img-bg dish-card__img-bg--6"></div>
-            <div class="dish-card__img-pattern"></div>
-            <span class="dish-card__badge">Spicy</span>
-          </div>
-          <div class="dish-card__body">
-            <p class="dish-card__category">Main Course</p>
-            <h3 class="dish-card__name">Berbere Lamb Tagine</h3>
-            <p class="dish-card__desc">Ethiopian-spiced slow-braised lamb shoulder with preserved lemon, medjool dates, and saffron couscous.</p>
-            <div class="dish-card__footer">
-              <span class="dish-card__price">KSh 3,600</span>
-              <a href="pages/menu.html" class="dish-card__order" aria-label="View on menu">+</a>
-            </div>
-          </div>
-        </article>
-
-      </div><!-- /.dishes__grid -->
-
-      <div class="dishes__cta">
-        <a href="pages/menu.html" class="btn btn--forest">View Full Menu</a>
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
       </div>
-
+    </div>
+    <div class="slide-dots" aria-hidden="true">
+      <span class="dot dot-1"></span>
+      <span class="dot dot-2"></span>
+      <span class="dot dot-3"></span>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       STORY PREVIEW
-  ══════════════════════════════════════ -->
-  <section class="story section" aria-labelledby="story-title">
+  <!-- STATS STRIP -->
+  <section class="stats-strip" aria-label="Restaurant statistics">
     <div class="container">
-      <div class="story__grid">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-num">15<sup>+</sup></span>
+          <span class="stat-label">Years of Excellence</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-num">20K<sup>+</sup></span>
+          <span class="stat-label">Happy Guests</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-num">50<sup>+</sup></span>
+          <span class="stat-label">Signature Dishes</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-num">4</span>
+          <span class="stat-label">Award Wins</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Images -->
-        <div class="story__images">
-          <div class="story__img-main">
+  <!-- STORY PREVIEW -->
+  <section class="story section-pad" aria-labelledby="story-title">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-images">
+          <div class="story-img story-img-main">
             <img
-              src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=800&q=80"
-              alt="Chef plating a dish at Savannah Flame"
-              class="story__img-photo"
+              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=80&auto=format&fit=crop"
+              alt="Warm candlelit interior of Savannah Flame restaurant"
               loading="lazy"
             />
           </div>
-          <div class="story__img-accent">
+          <div class="story-img story-img-sm">
             <img
-              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80"
-              alt="Elegant interior of Savannah Flame restaurant"
-              class="story__img-photo"
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80&auto=format&fit=crop"
+              alt="Beautifully plated dish"
               loading="lazy"
             />
           </div>
-          <!-- Floating badge -->
-          <div class="story__badge" aria-label="15 years of excellence">
-            <div class="story__badge-inner">
-              <span class="story__badge-num">15</span>
-              <span class="story__badge-text">Years of Excellence</span>
-            </div>
+          <div class="story-badge" aria-hidden="true">
+            <span>Since</span>
+            <strong>2009</strong>
           </div>
         </div>
+        <div class="story-content">
+          <p class="section-label">Our Story</p>
+          <h2 class="section-title" id="story-title">Born From the <span>Heart of Africa</span></h2>
+          <div class="ornament"><span>✦</span></div>
+          <p class="story-text">
+            Savannah Flame was born from a deep love for the vibrant cuisines of West, East, and Southern
+            Africa — a desire to share the warmth, depth, and soul of these traditions with the world.
+            Our founder, Chef Amara Diallo, left Dakar with little more than her grandmother's recipes
+            and an unwavering belief that African food deserved a place at the world's finest tables.
+          </p>
+          <p class="story-text">
+            Today, our kitchen blends ancestral techniques with contemporary presentation, creating dishes
+            that are both deeply familiar and revelatory to those discovering them for the first time.
+          </p>
+          <div class="story-features">
+            <div class="story-feat">
+              <span class="feat-icon" aria-hidden="true">🌿</span>
+              <div>
+                <strong>Locally Sourced</strong>
+                <p>Seasonal Norwegian ingredients fused with imported African spices</p>
+              </div>
+            </div>
+            <div class="story-feat">
+              <span class="feat-icon" aria-hidden="true">👨‍🍳</span>
+              <div>
+                <strong>Master Craft</strong>
+                <p>Techniques passed down through generations, refined for today</p>
+              </div>
+            </div>
+          </div>
+          <a href="about.html" class="btn btn-forest">Discover Our Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Content -->
-        <div class="story__content">
-          <span class="section-eyebrow">Our Heritage</span>
-          <h2 class="section-title" id="story-title">
-            A Story Born From the Heart of Africa
-          </h2>
-          <div class="gold-bar gold-bar--left"></div>
+  <!-- FEATURED DISHES -->
+  <section class="featured section-pad" aria-labelledby="featured-title">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">Signature Creations</p>
+        <h2 class="section-title" id="featured-title">Featured <span>Dishes</span></h2>
+        <p class="section-subtitle">A curated selection of our most celebrated plates — each one a journey across the African continent.</p>
+      </div>
+      <div class="dishes-grid">
 
-          <blockquote class="story__quote">
-            "I wanted the world to taste Africa the way I grew up tasting it — vibrant, generous, alive."
+        <article class="dish-card dish-card--feature">
+          <div class="dish-img-wrap">
+            <div class="dish-gradient" style="--g1:#b65f3d;--g2:#8f4a2e;">
+              <span class="dish-emoji" aria-hidden="true">🍲</span>
+            </div>
+            <div class="dish-badge">Chef's Pick</div>
+          </div>
+          <div class="dish-info">
+            <div class="dish-meta">
+              <span class="dish-tag">West African</span>
+              <span class="dish-price">NOK 285</span>
+            </div>
+            <h3 class="dish-name">Egusi Royale</h3>
+            <p class="dish-desc">Slow-simmered melon seed stew with smoked stockfish, wild spinach, and palm nut reduction, served with pounded yam quenelle.</p>
+            <div class="dish-footer">
+              <div class="dish-rating" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></div>
+              <a href="menu.html" class="dish-link">View Recipe →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-img-wrap">
+            <div class="dish-gradient" style="--g1:#1f4d3a;--g2:#163828;">
+              <span class="dish-emoji" aria-hidden="true">🥩</span>
+            </div>
+          </div>
+          <div class="dish-info">
+            <div class="dish-meta">
+              <span class="dish-tag">East African</span>
+              <span class="dish-price">NOK 320</span>
+            </div>
+            <h3 class="dish-name">Nyama Choma</h3>
+            <p class="dish-desc">Charcoal-roasted lamb marinated 24hr in Kenyan spices, served with kachumbari salsa and ugali cake.</p>
+            <div class="dish-footer">
+              <div class="dish-rating" aria-label="5 stars"><span aria-hidden="true">★★★★★</span></div>
+              <a href="menu.html" class="dish-link">View Recipe →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-img-wrap">
+            <div class="dish-gradient" style="--g1:#d4af37;--g2:#a88b26;">
+              <span class="dish-emoji" aria-hidden="true">🐠</span>
+            </div>
+          </div>
+          <div class="dish-info">
+            <div class="dish-meta">
+              <span class="dish-tag">Coastal</span>
+              <span class="dish-price">NOK 295</span>
+            </div>
+            <h3 class="dish-name">Tilapia en Chermoula</h3>
+            <p class="dish-desc">Atlantic tilapia cured in North African chermoula, pan-seared on saffron couscous with preserved lemon.</p>
+            <div class="dish-footer">
+              <div class="dish-rating" aria-label="4.5 stars"><span aria-hidden="true">★★★★½</span></div>
+              <a href="menu.html" class="dish-link">View Recipe →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-img-wrap">
+            <div class="dish-gradient" style="--g1:#4a2060;--g2:#2d1040;">
+              <span class="dish-emoji" aria-hidden="true">🍮</span>
+            </div>
+          </div>
+          <div class="dish-info">
+            <div class="dish-meta">
+              <span class="dish-tag">Dessert</span>
+              <span class="dish-price">NOK 145</span>
+            </div>
+            <h3 class="dish-name">Malva Mabele</h3>
+            <p class="dish-desc">South African malva pudding reinvented with sorghum flour, date caramel, and cardamom cream.</p>
+            <div class="dish-footer">
+              <div class="dish-rating" aria-label="5 stars"><span aria-hidden="true">★★★★★</span></div>
+              <a href="menu.html" class="dish-link">View Recipe →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      <div class="text-center" style="margin-top:3rem;">
+        <a href="menu.html" class="btn btn-gold">View Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why section-pad" aria-labelledby="why-title">
+    <div class="why-texture" aria-hidden="true"></div>
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">The Savannah Difference</p>
+        <h2 class="section-title" id="why-title">Why Guests <span>Choose Us</span></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">🌍</div>
+          <h3>Pan-African Expertise</h3>
+          <p>Our chefs trained across six African countries, bringing authentic regional knowledge to every dish we serve.</p>
+        </div>
+        <div class="why-card why-card--featured">
+          <div class="why-icon" aria-hidden="true">🔥</div>
+          <h3>Live Fire Cooking</h3>
+          <p>Our signature open-flame grill, fueled by African hardwood charcoal, imparts a smoky primal flavour you can't replicate.</p>
+          <div class="why-pulse" aria-hidden="true"></div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">🌿</div>
+          <h3>Seasonal & Sustainable</h3>
+          <p>We partner with Norwegian organic farmers and responsible importers for ethically sourced ingredients.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">🍷</div>
+          <h3>African Wine Cellar</h3>
+          <p>Oslo's only restaurant with a dedicated South African, Moroccan, and Tunisian wine programme.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">🎶</div>
+          <h3>Cultural Atmosphere</h3>
+          <p>Live Afrobeats and jazz every Friday and Saturday evening — music and cuisine transporting you to the continent.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon" aria-hidden="true">👨‍🍳</div>
+          <h3>Private Dining</h3>
+          <p>Host intimate gatherings in our Kalahari Room — private dining for up to 20 guests with bespoke menu creation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section-pad" aria-labelledby="testi-title">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">Guest Voices</p>
+        <h2 class="section-title" id="testi-title">What Our <span>Guests Say</span></h2>
+      </div>
+      <div class="testi-grid">
+
+        <figure class="testi-card">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <blockquote>
+            <p>"An extraordinary experience. The Egusi Royale alone is worth the trip to Oslo. Chef Amara has created something genuinely rare — food that feels both ancient and utterly modern."</p>
           </blockquote>
-
-          <p class="story__text">
-            Savannah Flame was founded in 2009 by Chef Amara Diallo with a singular dream: to honour
-            the culinary diversity of an entire continent and share it with the world. From the smoky
-            braais of Southern Africa to the aromatic stews of North Africa's medinas, every dish on
-            our menu carries centuries of tradition.
-          </p>
-
-          <p class="story__text">
-            What began as a modest dining room in Nairobi has grown into an internationally recognised
-            destination — winner of three consecutive East Africa Restaurant Awards and a Condé Nast
-            Traveller recommendation for five straight years.
-          </p>
-
-          <a href="pages/about.html" class="btn btn--outline-gold">Read Our Full Story</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       WHY CHOOSE US
-  ══════════════════════════════════════ -->
-  <section class="why section" aria-labelledby="why-title">
-    <div class="container">
-
-      <div class="why__header">
-        <span class="section-eyebrow">Why Savannah Flame</span>
-        <h2 class="section-title" id="why-title">A Dining Experience Unlike Any Other</h2>
-        <div class="gold-bar"></div>
-        <p class="section-subtitle" style="color: rgba(248,244,233,0.65); margin: 0 auto;">
-          Four pillars define every evening you spend with us.
-        </p>
-      </div>
-
-      <div class="why__grid">
-
-        <div class="why-card">
-          <div class="why-card__icon" aria-hidden="true">🌿</div>
-          <h3 class="why-card__title">Farm to Flame</h3>
-          <p class="why-card__text">We partner directly with local farmers and artisan producers to source the freshest, most flavourful ingredients the continent offers.</p>
-        </div>
-
-        <div class="why-card">
-          <div class="why-card__icon" aria-hidden="true">👨‍🍳</div>
-          <h3 class="why-card__title">Master Craftsmanship</h3>
-          <p class="why-card__text">Our award-winning culinary team blends traditional techniques with modern precision — every plate is an act of creative artistry.</p>
-        </div>
-
-        <div class="why-card">
-          <div class="why-card__icon" aria-hidden="true">🌍</div>
-          <h3 class="why-card__title">Pan-African Identity</h3>
-          <p class="why-card__text">One menu, 54 culinary traditions. We celebrate East, West, North, Southern, and Central African flavour profiles with equal reverence.</p>
-        </div>
-
-        <div class="why-card">
-          <div class="why-card__icon" aria-hidden="true">✨</div>
-          <h3 class="why-card__title">Immersive Ambience</h3>
-          <p class="why-card__text">From the handcrafted décor to the curated Afrobeats soundtrack, every sensory detail is designed to transport you to the Savannah.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       TESTIMONIALS
-  ══════════════════════════════════════ -->
-  <section class="testimonials section" aria-labelledby="testimonials-title">
-    <div class="container">
-
-      <div class="testimonials__header">
-        <span class="section-eyebrow">Guest Voices</span>
-        <h2 class="section-title" id="testimonials-title">What Our Guests Are Saying</h2>
-        <div class="gold-bar"></div>
-      </div>
-
-      <div class="testimonials__grid">
-
-        <article class="testimonial-card">
-          <div class="testimonial-card__stars" aria-label="5 stars">
-            <span class="star">★</span><span class="star">★</span>
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <p class="testimonial-card__text">
-            "The Nyama Choma Royale was transcendent. I've travelled across Africa and this dish captured every memory in one bite. Savannah Flame is pure magic."
-          </p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar avatar--forest">AM</div>
+          <figcaption>
+            <div class="testi-avatar" aria-hidden="true">E</div>
             <div>
-              <p class="testimonial-card__name">Amani Mwangi</p>
-              <p class="testimonial-card__location">Nairobi, Kenya</p>
+              <strong>Elena Marchand</strong>
+              <span>Food Critic, Aftenposten</span>
             </div>
-          </div>
-        </article>
+          </figcaption>
+        </figure>
 
-        <article class="testimonial-card">
-          <div class="testimonial-card__stars" aria-label="5 stars">
-            <span class="star">★</span><span class="star">★</span>
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <p class="testimonial-card__text">
-            "An absolutely stunning experience — from the warm, earthy decor to the extraordinary Berbere Tagine. This is African cuisine elevated to its rightful place."
-          </p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar avatar--terra">SO</div>
+        <figure class="testi-card testi-card--featured">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <blockquote>
+            <p>"I've eaten at restaurants across Africa and Europe. Savannah Flame captures a spirit I've never encountered anywhere else — like dining with family you haven't met yet."</p>
+          </blockquote>
+          <figcaption>
+            <div class="testi-avatar" style="background:var(--forest)" aria-hidden="true">K</div>
             <div>
-              <p class="testimonial-card__name">Sophie Okafor</p>
-              <p class="testimonial-card__location">Lagos, Nigeria</p>
+              <strong>Kwame Asante</strong>
+              <span>Travel Writer &amp; Author</span>
             </div>
-          </div>
-        </article>
+          </figcaption>
+        </figure>
 
-        <article class="testimonial-card">
-          <div class="testimonial-card__stars" aria-label="5 stars">
-            <span class="star">★</span><span class="star">★</span>
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <p class="testimonial-card__text">
-            "I brought my international clients here and they were blown away. The Swahili Coast Prawns and baobab dessert had everyone asking for the recipe. Simply world-class."
-          </p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar avatar--gold">JK</div>
+        <figure class="testi-card">
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+          <blockquote>
+            <p>"We hosted our anniversary dinner in the Kalahari Room. From the personalised menu to the live kora performance, every detail was perfect. We still talk about it."</p>
+          </blockquote>
+          <figcaption>
+            <div class="testi-avatar" style="background:var(--terracotta)" aria-hidden="true">S</div>
             <div>
-              <p class="testimonial-card__name">James Kariuki</p>
-              <p class="testimonial-card__location">Kampala, Uganda</p>
+              <strong>Sofia &amp; Lars Bergman</strong>
+              <span>Regular Guests Since 2017</span>
             </div>
-          </div>
-        </article>
+          </figcaption>
+        </figure>
 
       </div>
-
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       CALL TO ACTION
-  ══════════════════════════════════════ -->
-  <section class="cta-section" aria-labelledby="cta-title">
-    <div class="cta-section__bg" aria-hidden="true"></div>
-    <div class="cta-section__overlay" aria-hidden="true"></div>
-    <div class="cta-section__decor" aria-hidden="true"></div>
-    <div class="cta-section__decor2" aria-hidden="true"></div>
-
+  <!-- CTA BANNER -->
+  <section class="cta-banner" aria-labelledby="cta-title">
+    <div class="cta-bg" aria-hidden="true"></div>
     <div class="container">
-      <div class="cta-section__content">
-        <span class="section-eyebrow">Reserve Your Evening</span>
-        <h2 class="cta-section__title" id="cta-title">
-          Ready for an <em>Unforgettable</em><br>Evening?
-        </h2>
-        <p class="cta-section__text">
-          Secure your table at Savannah Flame and let us take you on a culinary
-          journey across the African continent. Private dining and events available.
-        </p>
-        <div class="cta-section__actions">
-          <a href="pages/reservations.html" class="btn btn--primary">Book a Table</a>
-          <a href="pages/contact.html" class="btn btn--outline-light">Contact Us</a>
+      <div class="cta-inner">
+        <p class="section-label">Reserve Your Experience</p>
+        <h2 class="cta-title" id="cta-title">Your Table at the <em>Savannah Awaits</em></h2>
+        <p class="cta-sub">Join us for an unforgettable dining experience. Tables fill quickly — secure yours today.</p>
+        <div class="cta-actions">
+          <a href="reservations.html" class="btn btn-gold">Book a Table</a>
+          <a href="contact.html" class="btn btn-outline">Get in Touch</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════ -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
+</main>
 
-        <!-- Brand column -->
-        <div class="footer__brand">
-          <div class="footer__logo-name">Savannah <span>Flame</span></div>
-          <p class="footer__tagline">Authentic African Flavors Reimagined</p>
-          <p class="footer__about">
-            A culinary landmark celebrating the extraordinary diversity of African cuisine.
-            Every dish is a story; every evening is a journey.
-          </p>
-          <div class="footer__social">
-            <a href="#" class="footer__social-link" aria-label="Instagram">IG</a>
-            <a href="#" class="footer__social-link" aria-label="Facebook">FB</a>
-            <a href="#" class="footer__social-link" aria-label="Twitter / X">X</a>
-            <a href="#" class="footer__social-link" aria-label="TripAdvisor">TA</a>
-          </div>
-        </div>
-
-        <!-- Quick Links -->
-        <div>
-          <h3 class="footer__col-title">Quick Links</h3>
-          <ul class="footer__links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="pages/about.html">Our Story</a></li>
-            <li><a href="pages/menu.html">Menu</a></li>
-            <li><a href="pages/gallery.html">Gallery</a></li>
-            <li><a href="pages/reservations.html">Reservations</a></li>
-            <li><a href="pages/contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Opening Hours -->
-        <div>
-          <h3 class="footer__col-title">Opening Hours</h3>
-          <div class="footer__hours">
-            <div class="footer__hours-item">
-              <span class="day">Monday – Thursday</span>
-              <span>12pm – 10pm</span>
-            </div>
-            <div class="footer__hours-item">
-              <span class="day">Friday</span>
-              <span>12pm – 11pm</span>
-            </div>
-            <div class="footer__hours-item">
-              <span class="day">Saturday</span>
-              <span>11am – 11pm</span>
-            </div>
-            <div class="footer__hours-item">
-              <span class="day">Sunday</span>
-              <span>11am – 9pm</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact Details -->
-        <div>
-          <h3 class="footer__col-title">Find Us</h3>
-          <div class="footer__contact">
-            <div class="footer__contact-item">
-              <span class="footer__contact-icon">📍</span>
-              <span>14 Acacia Avenue, Westlands,<br>Nairobi, Kenya</span>
-            </div>
-            <div class="footer__contact-item">
-              <span class="footer__contact-icon">📞</span>
-              <span>+254 712 345 678</span>
-            </div>
-            <div class="footer__contact-item">
-              <span class="footer__contact-icon">✉️</span>
-              <span>reservations@savannahflame.com</span>
-            </div>
-            <div class="footer__contact-item">
-              <span class="footer__contact-icon">🌐</span>
-              <span>www.savannahflame.com</span>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /.footer__grid -->
-
-      <div class="footer__bottom">
-        <span>© 2024 Savannah Flame. All rights reserved.</span>
-        <span class="footer__credit">Designed and Developed Using Only HTML &amp; CSS</span>
-        <span>
-          <a href="pages/reservations.html">Book a Table</a> &nbsp;|&nbsp;
-          <a href="#">Privacy Policy</a>
-        </span>
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-name">🔥 Savannah Flame<small>Fine African Cuisine</small></div>
+        <p>Authentic African flavors reimagined for the world. Bringing the soul of the continent to the heart of Oslo since 2009.</p>
+        <nav class="footer-social" aria-label="Social media links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="Twitter/X">𝕏</a>
+          <a href="#" aria-label="TripAdvisor">✈</a>
+        </nav>
       </div>
-
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="menu.html">Our Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="reservations.html">Reservations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Opening Hours</h4>
+        <div class="footer-info">
+          <p><strong>Mon – Thu</strong></p>
+          <p>12:00 – 22:00</p>
+          <p><strong>Fri – Sat</strong></p>
+          <p>12:00 – 23:30</p>
+          <p><strong>Sunday</strong></p>
+          <p>13:00 – 21:00</p>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-info">
+          <p><span class="fi-icon" aria-hidden="true">📍</span> Grünerløkka 14, 0552 Oslo</p>
+          <p><span class="fi-icon" aria-hidden="true">📞</span> +47 22 45 78 90</p>
+          <p><span class="fi-icon" aria-hidden="true">✉</span> hello@savannahflame.no</p>
+          <p><span class="fi-icon" aria-hidden="true">🔥</span> Fine African Cuisine · Since 2009</p>
+        </div>
+      </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Savannah Flame. All rights reserved.</p>
+      <p class="craft">Designed and Developed Using Only HTML &amp; CSS</p>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

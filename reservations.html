@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservations — Savannah Flame</title>
+  <meta name="description" content="Book your table at Savannah Flame — Oslo's premier African fusion restaurant." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/reservations.css" />
+</head>
+<body>
+<input type="checkbox" id="nav-toggle" aria-hidden="true" />
+<nav class="nav-wrapper" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">🔥</div><div class="logo-text-wrap">Savannah Flame<small>Fine African Cuisine</small></div></a>
+    <label class="nav-hamburger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reservations.html" class="active">Reservations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="reservations.html" class="nav-cta">Book a Table</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <section class="page-hero res-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <p class="section-label">Reserve Your Experience</p>
+      <h1 class="page-hero-title">Book a <em>Table</em></h1>
+      <p class="page-hero-sub">Secure your place at the most celebrated African table in Scandinavia</p>
+    </div>
+  </section>
+
+  <!-- RESERVATION FORM + INFO -->
+  <section class="res-section section-pad">
+    <div class="container">
+      <div class="res-grid">
+
+        <!-- FORM -->
+        <div class="res-form-wrap">
+          <div class="res-form-header">
+            <p class="section-label">Make a Reservation</p>
+            <h2 class="section-title">Reserve Your <span>Table</span></h2>
+          </div>
+          <form class="res-form" action="#" method="post" novalidate aria-label="Reservation form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="fname" name="fname" placeholder="Amara" required autocomplete="given-name" />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="lname" name="lname" placeholder="Diallo" required autocomplete="family-name" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" placeholder="hello@example.com" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+47 000 00 000" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Date <span class="required" aria-hidden="true">*</span></label>
+                <input type="date" id="date" name="date" required />
+              </div>
+              <div class="form-group">
+                <label for="time">Preferred Time <span class="required" aria-hidden="true">*</span></label>
+                <select id="time" name="time" required>
+                  <option value="" disabled selected>Select a time</option>
+                  <optgroup label="Lunch">
+                    <option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option><option>14:00</option>
+                  </optgroup>
+                  <optgroup label="Dinner">
+                    <option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guests">Number of Guests <span class="required" aria-hidden="true">*</span></label>
+                <select id="guests" name="guests" required>
+                  <option value="" disabled selected>Select guests</option>
+                  <option>1 Guest</option><option>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5 Guests</option><option>6 Guests</option><option>7 Guests</option><option>8 Guests</option>
+                  <option>9–12 Guests (large group)</option><option>13–20 Guests (private dining)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="occasion">Occasion</label>
+                <select id="occasion" name="occasion">
+                  <option value="">No special occasion</option>
+                  <option>Birthday</option><option>Anniversary</option><option>Business Dinner</option>
+                  <option>Date Night</option><option>Family Celebration</option><option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="requests">Special Requests</label>
+              <textarea id="requests" name="requests" rows="4" placeholder="Dietary requirements, accessibility needs, seating preferences, allergies..."></textarea>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" id="agree" name="agree" required />
+              <label for="agree">I agree to the <a href="#">booking policy</a> and understand that reservations are held for 15 minutes.</label>
+            </div>
+            <button type="submit" class="btn btn-gold res-submit">Confirm Reservation</button>
+          </form>
+        </div>
+
+        <!-- INFO SIDEBAR -->
+        <div class="res-info">
+          <div class="res-info-card">
+            <h3>📅 Booking Information</h3>
+            <ul>
+              <li>Online bookings accepted up to 60 days in advance</li>
+              <li>For same-day reservations, please call us directly</li>
+              <li>Tables held for 15 minutes past booking time</li>
+              <li>Cancellations should be made 24hrs in advance</li>
+            </ul>
+          </div>
+          <div class="res-info-card">
+            <h3>⏰ Opening Hours</h3>
+            <div class="hours-list">
+              <div class="hours-row"><span>Monday – Thursday</span><strong>12:00 – 22:00</strong></div>
+              <div class="hours-row"><span>Friday – Saturday</span><strong>12:00 – 23:30</strong></div>
+              <div class="hours-row"><span>Sunday</span><strong>13:00 – 21:00</strong></div>
+              <div class="hours-row closed"><span>Public Holidays</span><strong>Closed</strong></div>
+            </div>
+          </div>
+          <div class="res-info-card res-info-card--featured">
+            <h3>🍽️ Private Dining</h3>
+            <p>Hosting a special event? Our Kalahari private dining room seats up to 20 guests with a bespoke menu designed personally by Chef Amara.</p>
+            <a href="contact.html" class="btn btn-gold" style="margin-top:1rem;display:inline-block;">Enquire Now</a>
+          </div>
+          <div class="res-info-card">
+            <h3>📞 Prefer to Call?</h3>
+            <p style="margin-bottom:0.5rem;">Our team is available during opening hours.</p>
+            <a href="tel:+4722457890" class="res-phone">+47 22 45 78 90</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION -->
+  <section class="faq section-pad" style="background:var(--light-gray);">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:3rem;">
+        <p class="section-label">Common Questions</p>
+        <h2 class="section-title">Reservations <span>FAQ</span></h2>
+      </div>
+      <div class="faq-list" style="max-width:780px;margin:0 auto;">
+
+        <details class="faq-item">
+          <summary class="faq-q">Can I make a same-day reservation online?</summary>
+          <div class="faq-a"><p>Same-day reservations are not available through our online booking form. Please call us directly at +47 22 45 78 90 between our opening hours and we'll do our best to accommodate you. Walk-ins are also welcome subject to availability.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">What is your cancellation policy?</summary>
+          <div class="faq-a"><p>We ask that you cancel at least 24 hours in advance so we can offer your table to another guest. For groups of 8 or more, we ask for 48 hours notice. Late cancellations or no-shows may result in a NOK 200 per-person fee for groups over 6.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Do you cater to dietary requirements?</summary>
+          <div class="faq-a"><p>Absolutely. Our menu features vegan and vegetarian dishes, and our kitchen can adapt many dishes for gluten-free, nut-free, and other requirements with advance notice. Please include details in your special requests, and our team will contact you to confirm.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Is there a dress code?</summary>
+          <div class="faq-a"><p>We describe our dress code as "smart casual." We want you to feel comfortable and special at the same time. While we don't enforce formal dress, we ask guests to avoid overly casual beachwear or sportswear in the main dining room.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Do you have parking?</summary>
+          <div class="faq-a"><p>There is no dedicated restaurant parking. We are located on Grünerløkka, which is well served by tram lines 11, 12, and 13 (stop: Birkelunden). Street parking is available nearby, and several public car parks are within a 5-minute walk.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Can we bring our own cake for a birthday?</summary>
+          <div class="faq-a"><p>Yes! We love celebrating with our guests. Please let us know in advance that you'll be bringing a cake so we can prepare a space for it. We do not charge a cakeage fee. Our pastry team can also create a bespoke celebration dessert if you'd prefer — enquire when booking.</p></div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo-name">🔥 Savannah Flame<small>Fine African Cuisine</small></div><p>Authentic African flavors reimagined for the world.</p><nav class="footer-social" aria-label="Social media"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">in</a><a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="TripAdvisor">✈</a></nav></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="menu.html">Our Menu</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="reservations.html">Reservations</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Opening Hours</h4><div class="footer-info"><p><strong>Mon – Thu</strong></p><p>12:00 – 22:00</p><p><strong>Fri – Sat</strong></p><p>12:00 – 23:30</p><p><strong>Sunday</strong></p><p>13:00 – 21:00</p></div></div>
+      <div class="footer-col"><h4>Contact Us</h4><div class="footer-info"><p><span class="fi-icon">📍</span>Grünerløkka 14, Oslo</p><p><span class="fi-icon">📞</span>+47 22 45 78 90</p><p><span class="fi-icon">✉</span>hello@savannahflame.no</p></div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 Savannah Flame. All rights reserved.</p><p class="craft">Designed and Developed Using Only HTML &amp; CSS</p></div>
+  </div>
+</footer>
+</body>
+</html>

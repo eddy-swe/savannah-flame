@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — Savannah Flame</title>
+  <meta name="description" content="Explore the Savannah Flame menu — starters, grills, seafood, desserts, and drinks inspired by the African continent." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+</head>
+<body>
+<input type="checkbox" id="nav-toggle" aria-hidden="true" />
+<nav class="nav-wrapper" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">🔥</div><div class="logo-text-wrap">Savannah Flame<small>Fine African Cuisine</small></div></a>
+    <label class="nav-hamburger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reservations.html">Reservations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="reservations.html" class="nav-cta">Book a Table</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero menu-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <p class="section-label">Pan-African Cuisine</p>
+      <h1 class="page-hero-title">Our <em>Menu</em></h1>
+      <p class="page-hero-sub">A journey across the continent, from the Sahel to the Cape — one dish at a time</p>
+    </div>
+  </section>
+
+  <!-- MENU TABS (CSS-only via radio buttons) -->
+  <section class="menu-section section-pad" aria-labelledby="menu-h">
+    <div class="container">
+
+      <div class="menu-intro text-center">
+        <p class="section-label">Explore Our Offerings</p>
+        <h2 class="section-title" id="menu-h">The Savannah <span>Table</span></h2>
+        <p class="section-subtitle">All dishes are prepared fresh daily. Allergen information available on request. Prices include VAT.</p>
+      </div>
+
+      <!-- Tab radio inputs -->
+      <input type="radio" name="menu-tab" id="tab-starters" checked aria-hidden="true" />
+      <input type="radio" name="menu-tab" id="tab-mains" aria-hidden="true" />
+      <input type="radio" name="menu-tab" id="tab-grills" aria-hidden="true" />
+      <input type="radio" name="menu-tab" id="tab-seafood" aria-hidden="true" />
+      <input type="radio" name="menu-tab" id="tab-desserts" aria-hidden="true" />
+      <input type="radio" name="menu-tab" id="tab-drinks" aria-hidden="true" />
+
+      <!-- Tab Labels -->
+      <div class="menu-tabs" role="tablist">
+        <label for="tab-starters" class="menu-tab-label" role="tab">🌿 Starters</label>
+        <label for="tab-mains"    class="menu-tab-label" role="tab">🍛 Mains</label>
+        <label for="tab-grills"   class="menu-tab-label" role="tab">🔥 Grills</label>
+        <label for="tab-seafood"  class="menu-tab-label" role="tab">🐠 Seafood</label>
+        <label for="tab-desserts" class="menu-tab-label" role="tab">🍮 Desserts</label>
+        <label for="tab-drinks"   class="menu-tab-label" role="tab">🍷 Drinks</label>
+      </div>
+
+      <!-- STARTERS -->
+      <div class="menu-panel" id="panel-starters">
+        <div class="menu-grid">
+          <div class="menu-item menu-item--feature">
+            <div class="menu-item-header">
+              <div><h3>Suya Skewers</h3><span class="menu-origin">Northern Nigeria / Sahel</span></div>
+              <span class="menu-price">NOK 145</span>
+            </div>
+            <p>Spiced beef skewers marinated in groundnut paste, ginger, and kielbasa spice blend, grilled over open flame. Served with sliced onion and tomato kachumbari. <span class="menu-badge">Chef's Choice</span></p>
+            <div class="menu-tags"><span>🌶 Spicy</span><span>🥜 Contains Nuts</span></div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Akkara Fritters</h3><span class="menu-origin">West African Coast</span></div><span class="menu-price">NOK 115</span></div>
+            <p>Crisp black-eyed pea fritters with scotch bonnet aioli and pickled mango relish.</p>
+            <div class="menu-tags"><span>🌱 Vegan</span></div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Bobotie Tartlet</h3><span class="menu-origin">Cape Malay, South Africa</span></div><span class="menu-price">NOK 135</span></div>
+            <p>Spiced minced lamb in a buttery tart shell, topped with savoury egg custard and apricot chutney.</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Dukkah Hummus</h3><span class="menu-origin">Egypt / North Africa</span></div><span class="menu-price">NOK 98</span></div>
+            <p>Silky chickpea hummus drizzled with Egyptian dukkah, za'atar oil, and pomegranate molasses. Served with amba flatbread.</p>
+            <div class="menu-tags"><span>🌱 Vegan</span><span>🥜 Contains Nuts</span></div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Harira Soup</h3><span class="menu-origin">Morocco</span></div><span class="menu-price">NOK 105</span></div>
+            <p>Traditional Moroccan soup of lentils, chickpeas, and tomato enriched with saffron and ras el hanout. Served with msemen bread.</p>
+            <div class="menu-tags"><span>🌱 Vegan</span></div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Whole Snail Gratinée</h3><span class="menu-origin">Cameroon Highlands</span></div><span class="menu-price">NOK 165</span></div>
+            <p>Giant African snails braised with palm butter, dried crayfish, and uziza leaf, finished with a herb crust gratin.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAINS -->
+      <div class="menu-panel" id="panel-mains">
+        <div class="menu-grid">
+          <div class="menu-item menu-item--feature">
+            <div class="menu-item-header"><div><h3>Egusi Royale</h3><span class="menu-origin">West Africa</span></div><span class="menu-price">NOK 285</span></div>
+            <p>Slow-simmered melon seed stew with smoked stockfish, wild spinach, and palm nut reduction. Served with pounded yam quenelle. <span class="menu-badge">Signature</span></p>
+            <div class="menu-tags"><span>🌶 Mild Spice</span></div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Doro Wat</h3><span class="menu-origin">Ethiopia</span></div><span class="menu-price">NOK 265</span></div>
+            <p>Slow-cooked Ethiopian chicken stew with berbere spice, hard-boiled eggs, and caramelised onion sauce. Served with injera.</p>
+            <div class="menu-tags"><span>🌶 Medium Spice</span></div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Tagine de Kefta</h3><span class="menu-origin">Morocco</span></div><span class="menu-price">NOK 275</span></div>
+            <p>Lamb meatballs simmered in a spiced tomato and honey tagine with preserved lemon and olives. Served with fragrant couscous.</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Jollof Rice Supreme</h3><span class="menu-origin">West Africa</span></div><span class="menu-price">NOK 245</span></div>
+            <p>Our definitive jollof — smoky, slow-cooked tomato rice prepared in the traditional party style with plantain and whole roasted chicken.</p>
+            <div class="menu-tags"><span>🌶 Mild Spice</span></div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Bunny Chow</h3><span class="menu-origin">Durban, South Africa</span></div><span class="menu-price">NOK 255</span></div>
+            <p>A Durban icon — hollowed artisan sourdough filled with lamb curry made to a 1940s Natal recipe, with sambals and pickled carrot.</p>
+            <div class="menu-tags"><span>🌶 Medium Spice</span></div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Mushroom Chakalaka</h3><span class="menu-origin">Southern Africa</span></div><span class="menu-price">NOK 225</span></div>
+            <p>King oyster mushrooms in a spiced chakalaka sauce with cannellini beans, roasted peppers, and maize pap. A plant-based celebration.</p>
+            <div class="menu-tags"><span>🌱 Vegan</span><span>🌶 Mild Spice</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRILLS -->
+      <div class="menu-panel" id="panel-grills">
+        <div class="menu-grid">
+          <div class="menu-item menu-item--feature">
+            <div class="menu-item-header"><div><h3>Nyama Choma Lamb</h3><span class="menu-origin">Kenya / East Africa</span></div><span class="menu-price">NOK 320</span></div>
+            <p>Half rack of lamb marinated 24 hours in Kenyan herbs and citrus, charcoal-roasted. Served with kachumbari and ugali cake. <span class="menu-badge">Signature</span></p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Braai Ribeye</h3><span class="menu-origin">South Africa</span></div><span class="menu-price">NOK 395</span></div>
+            <p>300g Norwegian ribeye grilled over African hardwood with braai spice rub. Served with pap, chakalaka relish, and borewors sausage.</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Piri Piri Chicken</h3><span class="menu-origin">Mozambique / Portugal</span></div><span class="menu-price">NOK 295</span></div>
+            <p>Spatchcock chicken marinated in homemade piri piri sauce, grilled bone-in. Served with roasted garlic mash and lemon.</p>
+            <div class="menu-tags"><span>🌶 Hot</span></div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Mechoui Shoulder</h3><span class="menu-origin">North Africa / Maghreb</span></div><span class="menu-price">NOK 345</span></div>
+            <p>Slow-roasted lamb shoulder seasoned with cumin, coriander, and preserved lemon. Carved tableside with flatbread and harissa.</p>
+            <div class="menu-tags"><span>For 2 persons</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEAFOOD -->
+      <div class="menu-panel" id="panel-seafood">
+        <div class="menu-grid">
+          <div class="menu-item menu-item--feature">
+            <div class="menu-item-header"><div><h3>Tilapia en Chermoula</h3><span class="menu-origin">North Africa</span></div><span class="menu-price">NOK 295</span></div>
+            <p>Atlantic tilapia cured in chermoula marinade, pan-seared golden. Served on saffron couscous with preserved lemon and olives. <span class="menu-badge">Seasonal</span></p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Prawn Moambé</h3><span class="menu-origin">Democratic Republic of Congo</span></div><span class="menu-price">NOK 315</span></div>
+            <p>King prawns in a rich moambé sauce of palm nut, garlic, and scotch bonnet. Served with cassava fufu and crispy plantain.</p>
+            <div class="menu-tags"><span>🌶 Spicy</span></div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Grilled Whole Sea Bass</h3><span class="menu-origin">East African Coast</span></div><span class="menu-price">NOK 335</span></div>
+            <p>Whole Norwegian sea bass marinated in Swahili spices — ginger, cardamom, coconut — grilled over charcoal. Served with pilau rice.</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Crab Pepper Soup</h3><span class="menu-origin">Nigeria / Rivers State</span></div><span class="menu-price">NOK 265</span></div>
+            <p>Blue crab in a fragrant pepper soup broth of calabash nutmeg, utazi leaves, and scotch bonnet. Served with roasted yam.</p>
+            <div class="menu-tags"><span>🌶 Medium-Hot</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESSERTS -->
+      <div class="menu-panel" id="panel-desserts">
+        <div class="menu-grid">
+          <div class="menu-item menu-item--feature">
+            <div class="menu-item-header"><div><h3>Malva Mabele</h3><span class="menu-origin">South Africa / Reinvented</span></div><span class="menu-price">NOK 145</span></div>
+            <p>South African malva pudding reinvented with sorghum flour, dark date caramel, and cardamom cream. A warm, deeply comforting classic. <span class="menu-badge">Most Loved</span></p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Basbousa Cake</h3><span class="menu-origin">Egypt / North Africa</span></div><span class="menu-price">NOK 125</span></div>
+            <p>Semolina and coconut cake soaked in rosewater syrup, served warm with Greek yoghurt and crushed pistachios.</p>
+            <div class="menu-tags"><span>🥜 Contains Nuts</span></div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Mango Fool</h3><span class="menu-origin">East Africa / Pan-African</span></div><span class="menu-price">NOK 110</span></div>
+            <p>Whipped cream folded through Alphonso mango purée, layered with passion fruit curd and toasted coconut flakes.</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header"><div><h3>Peanut Butter Parfait</h3><span class="menu-origin">West Africa</span></div><span class="menu-price">NOK 130</span></div>
+            <p>Chilled parfait of roasted groundnut cream with dark chocolate ganache, tamarind caramel, and sea salt.</p>
+            <div class="menu-tags"><span>🥜 Contains Nuts</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DRINKS -->
+      <div class="menu-panel" id="panel-drinks">
+        <div class="drinks-columns">
+          <div>
+            <h3 class="drinks-category">Mocktails &amp; Infusions</h3>
+            <div class="menu-item drinks-item">
+              <div class="menu-item-header"><div><h3>Bissap Hibiscus</h3></div><span class="menu-price">NOK 85</span></div>
+              <p>West African hibiscus flower infusion, chilled, with ginger and lime.</p>
+            </div>
+            <div class="menu-item drinks-item">
+              <div class="menu-item-header"><div><h3>Baobab Lemonade</h3></div><span class="menu-price">NOK 90</span></div>
+              <p>Fresh lemon juice with baobab powder, honey, and sparkling water.</p>
+            </div>
+            <div class="menu-item drinks-item">
+              <div class="menu-item-header"><div><h3>Spiced Rooibos</h3></div><span class="menu-price">NOK 75</span></div>
+              <p>South African rooibos steeped with cinnamon, cardamom, and orange peel. Hot or iced.</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="drinks-category">African Wines</h3>
+            <div class="menu-item drinks-item">
+              <div class="menu-item-header"><div><h3>Rustenberg Chardonnay</h3><span class="menu-origin">Stellenbosch, S. Africa</span></div><span class="menu-price">NOK 155/gls</span></div>
+              <p>Elegant and mineral, with citrus blossom and toasted oak notes.</p>
+            </div>
+            <div class="menu-item drinks-item">
+              <div class="menu-item-header"><div><h3>Kanonkop Pinotage</h3><span class="menu-origin">Western Cape, S. Africa</span></div><span class="menu-price">NOK 165/gls</span></div>
+              <p>South Africa's signature grape — smoky, full-bodied, with dark cherry and tobacco.</p>
+            </div>
+            <div class="menu-item drinks-item">
+              <div class="menu-item-header"><div><h3>Volubilia Gris</h3><span class="menu-origin">Meknès, Morocco</span></div><span class="menu-price">NOK 145/gls</span></div>
+              <p>Dry Moroccan rosé with wild strawberry, citrus, and a delicate mineral finish.</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="drinks-category">Cocktails</h3>
+            <div class="menu-item drinks-item">
+              <div class="menu-item-header"><div><h3>Savannah Sunset</h3></div><span class="menu-price">NOK 165</span></div>
+              <p>Rum, Campari, hibiscus syrup, passion fruit, and prosecco. Our house signature.</p>
+            </div>
+            <div class="menu-item drinks-item">
+              <div class="menu-item-header"><div><h3>Kalahari Mule</h3></div><span class="menu-price">NOK 155</span></div>
+              <p>Gin, ginger beer, baobab bitters, and fresh lime over crushed ice.</p>
+            </div>
+            <div class="menu-item drinks-item">
+              <div class="menu-item-header"><div><h3>Cape Town Sour</h3></div><span class="menu-price">NOK 155</span></div>
+              <p>Rooibos-infused whisky, lemon juice, honey syrup, and egg white.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ALLERGEN NOTE -->
+  <div class="allergen-note">
+    <div class="container">
+      <p>🌱 = Vegan &nbsp;|&nbsp; 🌶 = Contains Chilli &nbsp;|&nbsp; 🥜 = Contains Nuts &nbsp;|&nbsp; Please inform your server of any dietary requirements or allergies before ordering.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo-name">🔥 Savannah Flame<small>Fine African Cuisine</small></div><p>Authentic African flavors reimagined for the world.</p><nav class="footer-social" aria-label="Social media"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">in</a><a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="TripAdvisor">✈</a></nav></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="menu.html">Our Menu</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="reservations.html">Reservations</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Opening Hours</h4><div class="footer-info"><p><strong>Mon – Thu</strong></p><p>12:00 – 22:00</p><p><strong>Fri – Sat</strong></p><p>12:00 – 23:30</p><p><strong>Sunday</strong></p><p>13:00 – 21:00</p></div></div>
+      <div class="footer-col"><h4>Contact Us</h4><div class="footer-info"><p><span class="fi-icon">📍</span>Grünerløkka 14, Oslo</p><p><span class="fi-icon">📞</span>+47 22 45 78 90</p><p><span class="fi-icon">✉</span>hello@savannahflame.no</p></div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 Savannah Flame. All rights reserved.</p><p class="craft">Designed and Developed Using Only HTML &amp; CSS</p></div>
+  </div>
+</footer>
+</body>
+</html>

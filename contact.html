@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Savannah Flame</title>
+  <meta name="description" content="Get in touch with Savannah Flame. Find us in Grünerløkka, Oslo." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+<input type="checkbox" id="nav-toggle" aria-hidden="true" />
+<nav class="nav-wrapper" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">🔥</div><div class="logo-text-wrap">Savannah Flame<small>Fine African Cuisine</small></div></a>
+    <label class="nav-hamburger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reservations.html">Reservations</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="reservations.html" class="nav-cta">Book a Table</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <section class="page-hero contact-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <p class="section-label">We'd Love to Hear From You</p>
+      <h1 class="page-hero-title">Get in <em>Touch</em></h1>
+      <p class="page-hero-sub">For reservations, events, press enquiries, or just to say hello</p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="contact-section section-pad">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- CONTACT FORM -->
+        <div class="contact-form-wrap">
+          <p class="section-label">Send a Message</p>
+          <h2 class="section-title">How Can We <span>Help?</span></h2>
+          <div class="ornament"><span>✦</span></div>
+          <form class="contact-form" action="#" method="post" novalidate aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-name">Full Name <span class="required">*</span></label>
+                <input type="text" id="c-name" name="name" placeholder="Your name" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="c-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="c-email" name="email" placeholder="your@email.com" required autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="c-subject">Subject <span class="required">*</span></label>
+              <select id="c-subject" name="subject" required>
+                <option value="" disabled selected>Select a subject</option>
+                <option>General Enquiry</option>
+                <option>Private Dining &amp; Events</option>
+                <option>Press &amp; Media</option>
+                <option>Partnerships</option>
+                <option>Feedback</option>
+                <option>Careers</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="c-message">Your Message <span class="required">*</span></label>
+              <textarea id="c-message" name="message" rows="6" placeholder="Tell us how we can help..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-forest contact-submit">Send Message →</button>
+          </form>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div class="contact-info">
+          <div class="contact-info-block">
+            <div class="ci-icon" aria-hidden="true">📍</div>
+            <div>
+              <h3>Visit Us</h3>
+              <p>Grünerløkka 14<br/>0552 Oslo, Norway</p>
+              <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--mid-gray);">5 min walk from Birkelunden tram stop<br/>(Lines 11, 12, 13)</p>
+            </div>
+          </div>
+          <div class="contact-info-block">
+            <div class="ci-icon" aria-hidden="true">📞</div>
+            <div>
+              <h3>Call Us</h3>
+              <a href="tel:+4722457890" class="ci-link">+47 22 45 78 90</a>
+              <p style="font-size:0.82rem;color:var(--mid-gray);margin-top:0.3rem;">Available during opening hours</p>
+            </div>
+          </div>
+          <div class="contact-info-block">
+            <div class="ci-icon" aria-hidden="true">✉</div>
+            <div>
+              <h3>Email Us</h3>
+              <a href="mailto:hello@savannahflame.no" class="ci-link">hello@savannahflame.no</a>
+              <p style="font-size:0.82rem;color:var(--mid-gray);margin-top:0.3rem;">We aim to reply within 24 hours</p>
+            </div>
+          </div>
+          <div class="contact-hours">
+            <h3>Opening Hours</h3>
+            <div class="ch-row"><span>Monday – Thursday</span><strong>12:00 – 22:00</strong></div>
+            <div class="ch-row"><span>Friday – Saturday</span><strong>12:00 – 23:30</strong></div>
+            <div class="ch-row"><span>Sunday</span><strong>13:00 – 21:00</strong></div>
+          </div>
+          <div class="contact-social">
+            <h3>Follow the Flame</h3>
+            <div class="social-links">
+              <a href="#" class="social-pill" aria-label="Instagram">📸 Instagram</a>
+              <a href="#" class="social-pill" aria-label="Facebook">👍 Facebook</a>
+              <a href="#" class="social-pill" aria-label="Twitter/X">𝕏 Twitter</a>
+              <a href="#" class="social-pill" aria-label="TripAdvisor">✈ TripAdvisor</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP PLACEHOLDER -->
+  <section class="map-section" aria-label="Restaurant location">
+    <div class="map-placeholder">
+      <div class="map-inner">
+        <!-- Decorative African pattern map backdrop -->
+        <div class="map-bg" aria-hidden="true"></div>
+        <div class="map-pin-wrap">
+          <div class="map-pin" aria-hidden="true">
+            <span>🔥</span>
+            <div class="map-pin-ring"></div>
+          </div>
+          <div class="map-label">
+            <strong>Savannah Flame</strong>
+            <span>Grünerløkka 14, Oslo</span>
+            <a href="https://maps.google.com/?q=Grünerløkka,Oslo" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:0.75rem;padding:0.5rem 1.2rem;font-size:0.78rem;">Open in Google Maps ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo-name">🔥 Savannah Flame<small>Fine African Cuisine</small></div><p>Authentic African flavors reimagined for the world.</p><nav class="footer-social" aria-label="Social media"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">in</a><a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="TripAdvisor">✈</a></nav></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="menu.html">Our Menu</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="reservations.html">Reservations</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Opening Hours</h4><div class="footer-info"><p><strong>Mon – Thu</strong></p><p>12:00 – 22:00</p><p><strong>Fri – Sat</strong></p><p>12:00 – 23:30</p><p><strong>Sunday</strong></p><p>13:00 – 21:00</p></div></div>
+      <div class="footer-col"><h4>Contact Us</h4><div class="footer-info"><p><span class="fi-icon">📍</span>Grünerløkka 14, Oslo</p><p><span class="fi-icon">📞</span>+47 22 45 78 90</p><p><span class="fi-icon">✉</span>hello@savannahflame.no</p></div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 Savannah Flame. All rights reserved.</p><p class="craft">Designed and Developed Using Only HTML &amp; CSS</p></div>
+  </div>
+</footer>
+</body>
+</html>

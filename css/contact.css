@@ -1,0 +1,130 @@
+/* Contact Page */
+.contact-hero { background: url('https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat; }
+.page-hero { height: 55vh; min-height: 400px; position: relative; display: flex; align-items: center; overflow: hidden; }
+.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(22,22,22,0.88), rgba(31,77,58,0.5)); }
+.page-hero-content { position: relative; z-index: 1; animation: fadeUp 1s ease both 0.2s; }
+.page-hero-title { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4.5rem); font-weight: 900; color: var(--ivory); line-height: 1.1; margin: 0.75rem 0 1rem; }
+.page-hero-title em { color: var(--gold-lt); font-style: italic; }
+.page-hero-sub { color: rgba(248,244,233,0.75); font-size: 1.1rem; }
+
+.contact-section { background: var(--ivory); }
+.contact-grid { display: grid; grid-template-columns: 1fr 380px; gap: 5rem; align-items: start; }
+
+/* Form */
+.contact-form { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.45rem; }
+.form-group label { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dark); }
+.required { color: var(--terracotta); }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--ivory-dk);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body); font-size: 0.95rem;
+  color: var(--dark); background: #fff; outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition); width: 100%;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: var(--gold); box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
+}
+.form-group textarea { resize: vertical; min-height: 140px; }
+.contact-submit { padding: 1rem 2.5rem; font-size: 0.95rem; }
+
+/* Info sidebar */
+.contact-info { display: flex; flex-direction: column; gap: 1.5rem; position: sticky; top: calc(var(--nav-h) + 2rem); }
+.contact-info-block {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1.25rem; background: #fff;
+  border-radius: var(--radius-md); box-shadow: var(--shadow-sm);
+  border-left: 3px solid var(--gold);
+}
+.ci-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+.contact-info-block h3 { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.3rem; }
+.contact-info-block p { font-size: 0.9rem; color: var(--mid-gray); line-height: 1.6; }
+.ci-link { font-size: 1.05rem; font-weight: 600; color: var(--forest); transition: color var(--transition); }
+.ci-link:hover { color: var(--terracotta); }
+
+.contact-hours { background: var(--forest); border-radius: var(--radius-md); padding: 1.5rem; }
+.contact-hours h3 { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--gold); margin-bottom: 1rem; }
+.ch-row { display: flex; justify-content: space-between; font-size: 0.87rem; color: rgba(248,244,233,0.65); padding-bottom: 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 0.6rem; }
+.ch-row:last-child { border-bottom: none; margin-bottom: 0; }
+.ch-row strong { color: var(--ivory); }
+
+.contact-social { padding: 1.25rem; background: #fff; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+.contact-social h3 { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 1rem; }
+.social-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.social-pill {
+  padding: 0.4rem 0.9rem; border-radius: 2rem;
+  border: 1px solid var(--ivory-dk);
+  font-size: 0.8rem; font-weight: 500; color: var(--mid-gray);
+  transition: all var(--transition);
+}
+.social-pill:hover { background: var(--forest); color: var(--gold); border-color: var(--forest); }
+
+/* Map placeholder */
+.map-section { height: 420px; position: relative; overflow: hidden; }
+.map-placeholder { width: 100%; height: 100%; }
+.map-inner { width: 100%; height: 100%; position: relative; display: flex; align-items: center; justify-content: center; }
+.map-bg {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(160deg, #1a3d2b 0%, #2a5c45 40%, #1f4d3a 60%, #163828 100%);
+}
+/* Decorative grid lines on the map */
+.map-bg::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(212,175,55,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,55,0.08) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.map-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, rgba(212,175,55,0.06) 0%, transparent 70%);
+}
+.map-pin-wrap {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+}
+.map-pin {
+  position: relative;
+  width: 70px; height: 70px;
+  background: var(--gold); border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  animation: pinBounce 2s ease-in-out infinite;
+}
+.map-pin span { transform: rotate(45deg); font-size: 1.6rem; }
+.map-pin-ring {
+  position: absolute; inset: -10px;
+  border-radius: 50% 50% 50% 0;
+  border: 2px solid rgba(212,175,55,0.3);
+  animation: ringPulse 2s ease-out infinite;
+}
+@keyframes pinBounce {
+  0%,100% { transform: rotate(-45deg) translateY(0); }
+  50%      { transform: rotate(-45deg) translateY(-6px); }
+}
+@keyframes ringPulse {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2); opacity: 0; }
+}
+.map-label {
+  background: rgba(22,22,22,0.9); color: var(--ivory);
+  padding: 1.25rem 1.75rem; border-radius: var(--radius-md);
+  text-align: center; backdrop-filter: blur(8px);
+  border: 1px solid rgba(212,175,55,0.2);
+}
+.map-label strong { display: block; font-family: var(--font-heading); font-size: 1.1rem; color: var(--gold); margin-bottom: 0.25rem; }
+.map-label span { font-size: 0.85rem; color: rgba(248,244,233,0.65); }
+
+@media (max-width: 1000px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .contact-info { position: static; }
+  .form-row { grid-template-columns: 1fr; }
+}
