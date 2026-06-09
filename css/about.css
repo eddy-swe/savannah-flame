@@ -1,7 +1,7 @@
 /* About Page Styles */
 
 .page-hero {
-  height: 55vh; min-height: 420px;
+  height: 100vh; min-height: 420px;
   position: relative;
   display: flex; align-items: center;
   overflow: hidden;
