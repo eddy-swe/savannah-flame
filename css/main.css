@@ -53,6 +53,16 @@ img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
+/* Form providers use this field as a honeypot for automated submissions. */
+.form-honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 /* ─── Typography Utilities ───────────────────────────────────── */
 .section-label {
   display: inline-block;

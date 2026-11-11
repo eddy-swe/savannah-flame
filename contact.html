@@ -47,15 +47,18 @@
           <p class="section-label">Send a Message</p>
           <h2 class="section-title">How Can We <span>Help?</span></h2>
           <div class="ornament"><span>✦</span></div>
-          <form class="contact-form" action="https://formspree.io/f/xvkapbpr" method="POST" novalidate aria-label="Contact form">
+          <form class="contact-form" action="https://formspree.io/f/xvkapbpr" method="POST" accept-charset="UTF-8" aria-label="Contact form">
+            <input type="hidden" name="_subject" value="New contact message — Savannah Flame" />
+            <input type="hidden" name="form_type" value="Contact message" />
+            <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="form-row">
               <div class="form-group">
                 <label for="c-name">Full Name <span class="required">*</span></label>
-                <input type="text" id="c-name" name="name" placeholder="Your name" required autocomplete="name" />
+                <input type="text" id="c-name" name="name" placeholder="Your name" required minlength="2" maxlength="100" autocomplete="name" />
               </div>
               <div class="form-group">
                 <label for="c-email">Email Address <span class="required">*</span></label>
-                <input type="email" id="c-email" name="email" placeholder="your@email.com" required autocomplete="email" />
+                <input type="email" id="c-email" name="email" placeholder="your@email.com" required maxlength="254" autocomplete="email" />
               </div>
             </div>
             <div class="form-group">
@@ -73,7 +76,7 @@
             </div>
             <div class="form-group">
               <label for="c-message">Your Message <span class="required">*</span></label>
-              <textarea id="c-message" name="message" rows="6" placeholder="Tell us how we can help..." required></textarea>
+              <textarea id="c-message" name="message" rows="6" placeholder="Tell us how we can help..." required minlength="10" maxlength="5000"></textarea>
             </div>
             <button type="submit" class="btn btn-forest contact-submit">Send Message →</button>
           </form>
