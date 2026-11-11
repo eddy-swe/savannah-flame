@@ -48,25 +48,28 @@
             <p class="section-label">Make a Reservation</p>
             <h2 class="section-title">Reserve Your <span>Table</span></h2>
           </div>
-          <form class="res-form" action="#" method="post" novalidate aria-label="Reservation form">
+          <form class="res-form" action="https://formspree.io/f/xvkapbpr" method="POST" accept-charset="UTF-8" aria-label="Reservation form">
+            <input type="hidden" name="_subject" value="New table reservation request — Savannah Flame" />
+            <input type="hidden" name="form_type" value="Reservation request" />
+            <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="form-row">
               <div class="form-group">
                 <label for="fname">First Name <span class="required" aria-hidden="true">*</span></label>
-                <input type="text" id="fname" name="fname" placeholder="Amara" required autocomplete="given-name" />
+                <input type="text" id="fname" name="fname" placeholder="Amara" required minlength="2" maxlength="50" autocomplete="given-name" />
               </div>
               <div class="form-group">
                 <label for="lname">Last Name <span class="required" aria-hidden="true">*</span></label>
-                <input type="text" id="lname" name="lname" placeholder="Diallo" required autocomplete="family-name" />
+                <input type="text" id="lname" name="lname" placeholder="Diallo" required minlength="2" maxlength="50" autocomplete="family-name" />
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
                 <label for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
-                <input type="email" id="email" name="email" placeholder="hello@example.com" required autocomplete="email" />
+                <input type="email" id="email" name="email" placeholder="hello@example.com" required maxlength="254" autocomplete="email" />
               </div>
               <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="+47 000 00 000" autocomplete="tel" />
+                <input type="tel" id="phone" name="phone" placeholder="+47 000 00 000" maxlength="30" autocomplete="tel" />
               </div>
             </div>
             <div class="form-row">
@@ -107,13 +110,13 @@
             </div>
             <div class="form-group">
               <label for="requests">Special Requests</label>
-              <textarea id="requests" name="requests" rows="4" placeholder="Dietary requirements, accessibility needs, seating preferences, allergies..."></textarea>
+              <textarea id="requests" name="requests" rows="4" placeholder="Dietary requirements, accessibility needs, seating preferences, allergies..." maxlength="2000"></textarea>
             </div>
             <div class="form-group form-check">
               <input type="checkbox" id="agree" name="agree" required />
               <label for="agree">I agree to the <a href="#">booking policy</a> and understand that reservations are held for 15 minutes.</label>
             </div>
-            <button type="submit" class="btn btn-gold res-submit">Confirm Reservation</button>
+            <button type="submit" class="btn btn-gold res-submit">Request Reservation</button>
           </form>
         </div>
 
