@@ -1,7 +1,7 @@
-# Savannah Flame
+# The Savannah Flame - [LIVE HERE](https://savannah-flame.onrender.com/)
 
 Savannah Flame is a simple static restaurant website for an African fusion
-restaurant in Oslo. It presents the restaurant, its menu, story, gallery, and
+restaurant. It presents the restaurant, its menu, story, gallery, and
 contact information in a responsive multi-page frontend.
 
 ## Features
@@ -10,7 +10,7 @@ contact information in a responsive multi-page frontend.
 - About, menu, gallery, reservations, and contact pages
 - Responsive layout for desktop and mobile screens
 - Reservation and contact forms handled by [Formspree](https://formspree.io/)
-- Deployed on Render for live testing
+- Deployed on **Render** for live testing
 
 ## Pages
 
@@ -31,3 +31,5 @@ python3 -m http.server 8000
 ```
 
 Then open [http://localhost:8000](http://localhost:8000) in a browser.
+ 
+ **Contributions** are welcomed :)
